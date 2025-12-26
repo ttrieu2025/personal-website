@@ -1,7 +1,7 @@
 import './App.css'
 import { FaLinkedin, FaInstagram, FaFacebook } from 'react-icons/fa'
 import { Routes, Route, Link } from 'react-router-dom'
-import Home from './src/pages/Home'
+import Home from './pages/Home'
 import Resources from './pages/Resources'
 import Blogs from './pages/Blogs'
 import Projects from './pages/Projects'
@@ -11,7 +11,7 @@ function App() {
     <>
       <header className="header">
         <nav className="nav-bar">
-          <Link to="/Home">Home</Link>
+          <Link to="/">Home</Link>
           <Link to="/Resources">Resources</Link>
           <Link to="/Blogs">Blogs</Link>
           <Link to="/Projects">Projects</Link>
@@ -46,7 +46,7 @@ function App() {
 
       {/* Pages */}
       <Routes>
-        <Route path="/Home" element={<Home />} />
+        <Route path="/" element={<Home />} />
         <Route path="/Resources" element={<Resources/>}/>
         <Route path="/Blogs" element={<Blogs/>}/>
         <Route path="/Projects" element={<Projects/>}/>
