@@ -1,7 +1,7 @@
 import './App.css'
 import { FaLinkedin, FaInstagram, FaFacebook } from 'react-icons/fa'
 import { Routes, Route, Link } from 'react-router-dom'
-import Home from './pages/Home.jsx'
+import Home from './pages/Home'
 import Resources from './pages/Resources'
 import Blogs from './pages/Blogs'
 import Projects from './pages/Projects'
