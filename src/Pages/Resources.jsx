@@ -23,6 +23,7 @@ function Blogs() {
                 }`}
               onClick={() => next(item)}
             >
+              {item.title}
             </a>
             <br />
           </div>
@@ -34,7 +35,7 @@ function Blogs() {
         <h2>{current.title}</h2>
 
       <iframe src={current.pdf} 
-      width="1000px" 
+      width="800px" 
       height="500px" 
       style={{ border: "none" }} 
       />
