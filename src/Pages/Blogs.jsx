@@ -17,7 +17,7 @@ const Blogitems = [
     id: 3,
     title: "Notes on Maxwell's Equations",
     pdf: "./Maxwell.pdf",
-    comment: "Maxwell's equations are elegant not only because of the mathematical formulation but also their physical intiutions and applications in engineering disciplines.",
+    comment: "Maxwell's equations are elegant not only because of their mathematical formulation but also because of their physical insights and applications in engineering disciplines.",
   },
 ];
 
