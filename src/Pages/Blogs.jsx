@@ -5,19 +5,19 @@ const Blogitems = [
     id: 1,
     title: "Lagrange Multipliers in Optimization",
     pdf: "./Lagrange.pdf",
-    comment: "Optimization notes",
+    comment: "When dealing with problems such as proving inequalities or finding maxima and minima, a constraint is often provided. Lagrange multipliers method is introduced as a powerful tool to solve such problems.",
   },
   {
     id: 2,
-    title: "A Story about L'Hopital's Rule",
-    pdf: "./LHopital.pdf",
-    comment: "Limits",
+    title: "A discussion on Kiepert's Theorem",
+    pdf: "./Kiepert.pdf",
+    comment: "A brief discussion on a series of well-known geometry theorems and their generalization, Kiepert's Theorem.",
   },
   {
     id: 3,
     title: "Notes on Maxwell's Equations",
     pdf: "./Maxwell.pdf",
-    comment: "Some mathematicians and physicists argue that Euler's Identity or Einstein's Mass-Energy Equivalence Equation is the most elegant equation that humans have ever discovered. However, I stand with Maxwell's Equations on this topic because of the beauty in their mathematical formulation as well as their applications in engineering disciplines. While a passion for designing technology is a reason for me to pursue Electrical Engineering, studying the language of these equations is what keeps the fire alive.",
+    comment: "Maxwell's equations are elegant not only because of the mathematical formulation but also their physical intiutions and applications in engineering disciplines.",
   },
 ];
 
@@ -48,13 +48,12 @@ function Blogs() {
         <h2>{current.title}</h2>
         <p>{current.comment}</p>
 
-        <iframe
-          src={current.pdf}
-          title={current.title}
-          width="100%"
-          height="600px"
-          style={{ border: "none" }}
-        />
+      <iframe src={current.pdf} 
+      title={current.title} 
+      width="100%" 
+      height="600px" 
+      style={{ border: "none" }} 
+      />
       </div>
     </div>
   );

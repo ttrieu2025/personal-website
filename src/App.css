@@ -44,22 +44,22 @@
 
 /* Header container: nav + social links aligned horizontally */
 .header {
+  position: fixed;       /* stick to top of screen */
+  top: 0;                /* top of viewport */
+  left: 0;
+  width: 100%;           /* span entire screen */
   display: flex;
-  justify-content: flex-start; /* nav left, social right */
-  align-items: center;            /* vertical center */
-  padding: 10px 20px;
-  background-color: #00000000;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  z-index: 100;
+  justify-content: space-between; /* nav left, social right */
+  align-items: center;   /* vertically center items */
+  margin-right: 20px;
 }
 
 /* Navigation links */
 .nav-bar {
-  display: flex;
+  display: fixed;
   gap: 20px;               /* space between links */
+  flex-shrink: 1; 
+  width: screen;
 }
 
 .nav-bar a {
@@ -75,8 +75,9 @@
 
 /* Social icons */
 .social-links {
-  display: flex;
-  gap: 15px;               /* space between icons */
+  margin-left: auto;
+  flex-shrink: 0;
+  gap: 20px;               /* space between icons */
   align-items: center;     /* vertically align with nav links */
 }
 
@@ -111,3 +112,12 @@
   height: auto;
   border-radius: 12px;      /* optional */
 }
+
+.Blogitems {
+  text-decoration: none;
+  color: #b5b4b4;
+  font-weight: bold;
+  padding: 8px 12px;       /* makes links fully clickable */
+  margin-bottom: 30px;
+}
+
