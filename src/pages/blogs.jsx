@@ -1,6 +1,6 @@
 function Blogs() {
   return (
-    <div className="page">
+    <div>
       <h1>Blogs</h1>
     </div>
   )

@@ -1,6 +1,6 @@
-export const Home = () => {
+function Home(){
   return (
-    <div>
+    <div  className="page">
       <p>
         My name is Trieu, but you can call me Trevor.<br />
         I study Electrical Engineering at UBC.<br />
