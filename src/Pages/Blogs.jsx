@@ -50,7 +50,7 @@ function Blogs() {
 
       <iframe src={current.pdf} 
       title={current.title} 
-      width="100%" 
+      width="800px" 
       height="600px" 
       style={{ border: "none" }} 
       />

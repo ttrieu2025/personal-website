@@ -1,9 +1,46 @@
-function Resources() {
+import { useState } from "react";
+
+const Blogitems = [
+  {
+    id: 1,
+    title: "MATH 256",
+    pdf: "./Math256.pdf",
+  },
+];
+
+
+function Blogs() {
+  const [current, next] = useState(Blogitems[0]);
+
   return (
-    <div className="page">
-      <h1>Resources</h1>
+    <div className="blogs-layout">
+      <div className="blog-list" >
+        {Blogitems.map((item) => (
+          <div>
+            <a
+              key={item.id}
+              className={`Blogitems${current.id === item.id ? "active" : ""
+                }`}
+              onClick={() => next(item)}
+            >
+            </a>
+            <br />
+          </div>
+        ))}
+      </div>
+
+
+      <div className="blog-viewer">
+        <h2>{current.title}</h2>
+
+      <iframe src={current.pdf} 
+      width="1000px" 
+      height="500px" 
+      style={{ border: "none" }} 
+      />
+      </div>
     </div>
-  )
+  );
 }
 
-export default Resources
+export default Blogs;
