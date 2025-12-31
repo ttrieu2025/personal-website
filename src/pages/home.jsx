@@ -1,6 +1,6 @@
 function Home(){
   return (
-    <div  className="page">
+    <div className="page">
       <p>
         My name is Trieu, but you can call me Trevor.<br />
         I study Electrical Engineering at UBC.<br />
@@ -9,3 +9,4 @@ function Home(){
     </div>
   )
 }
+export default Home
