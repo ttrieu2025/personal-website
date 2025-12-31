@@ -91,3 +91,23 @@
   background-color: #00000000;
   transform: scale(1.1);
 }
+
+.page {
+  padding: 2rem;
+}
+
+.intro {
+  display: flex;
+  align-items: center;      /* vertical alignment */
+  gap: 2rem;                /* space between text and image */
+}
+
+.intro-text {
+  flex: 1;
+}
+
+.intro-image img {
+  width: 600px;
+  height: auto;
+  border-radius: 12px;      /* optional */
+}
