@@ -1,10 +1,10 @@
 import './App.css'
 import { FaLinkedin, FaInstagram, FaFacebook } from 'react-icons/fa'
 import { Routes, Route, Link } from 'react-router-dom'
-import Home from './pages/Home'
-import Resources from './pages/Resources'
-import Blogs from './pages/Blogs'
-import Projects from './pages/Projects'
+import Home from './Pages/Home'
+import Resources from './Pages/Resources'
+import Blogs from './Pages/Blogs'
+import Projects from './Pages/Projects'
 
 function App() {
   return (
