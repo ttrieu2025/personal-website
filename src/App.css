@@ -3,6 +3,7 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  padding-top: 5rem;
 }
 
 
@@ -117,7 +118,23 @@
   text-decoration: none;
   color: #b5b4b4;
   font-weight: bold;
-  padding: 8px 12px;       /* makes links fully clickable */
-  margin-bottom: 30px;
+}
+.blogs-layout {
+  display: fixed;
+  gap: 150px; /* space between button list and viewer */
 }
 
+.blog-list {
+  position: fixed;       /* stays on the left while scrolling */
+  top: 100px;            /* below your header */
+  left: 20px;            /* distance from left edge */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 200px;           /* fixed width */
+}
+
+.blog-viewer {
+  margin-left: 240px;     /* width of .blog-list + some spacing */
+  padding: 20px;          /* optional padding for content */
+}
