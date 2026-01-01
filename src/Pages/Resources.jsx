@@ -22,14 +22,14 @@ function Blogs() {
       <div className="blog-list" >
         {Blogitems.map((item) => (
           <div>
-            <a
+            <button
               key={item.id}
               className={`Blogitems${current.id === item.id ? "active" : ""
                 }`}
               onClick={() => next(item)}
             >
               {item.title}
-            </a>
+            </button>
             <br />
           </div>
         ))}
