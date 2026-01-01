@@ -55,6 +55,8 @@
 
   padding: 10px 40px;   /* space from top + left/right */
   box-sizing: border-box;
+
+  background-color: #000000;
 }
 
 /* Navigation links */
