@@ -43,16 +43,18 @@
   color: #888;
 }
 
-/* Header container: nav + social links aligned horizontally */
 .header {
-  position: fixed;       /* stick to top of screen */
-  top: 0;                /* top of viewport */
+  position: fixed;
+  top: 0;
   left: 0;
-  width: 100%;           /* span entire screen */
+  width: 100%;
+
   display: flex;
-  justify-content: space-between; /* nav left, social right */
-  align-items: center;   /* vertically center items */
-  margin-right: 20px;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 10px 40px;   /* space from top + left/right */
+  box-sizing: border-box;
 }
 
 /* Navigation links */
