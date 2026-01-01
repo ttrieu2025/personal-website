@@ -6,6 +6,11 @@ const Blogitems = [
     title: "MATH 256",
     pdf: "./Math256.pdf",
   },
+  {
+    id: 2,
+    title: "MATH 253",
+    pdf: "./Math253.pdf",
+  },
 ];
 
 
