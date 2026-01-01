@@ -82,7 +82,7 @@
 .social-links {
   margin-left: auto;
   flex-shrink: 0;
-  gap: 20px;               /* space between icons */
+  gap: 25px;               /* space between icons */
   align-items: center;     /* vertically align with nav links */
 }
 

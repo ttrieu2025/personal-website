@@ -1,5 +1,5 @@
 import './App.css'
-import { FaLinkedin, FaInstagram, FaFacebook } from 'react-icons/fa'
+import { FaLinkedin, FaInstagram, FaFacebook, FaEnvelope } from 'react-icons/fa'
 import { Routes, Route, Link } from 'react-router-dom'
 
 import Home from './Pages/Home'
@@ -19,6 +19,14 @@ function App() {
         </nav>
 
         <div className="social-links">
+          <a
+            href="mailto:cat.trieu.truongminh@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaEnvelope size={30} color="#b5b4b4" />
+          </a>
+
           <a
             href="https://www.linkedin.com/in/mc-trieu-truong"
             target="_blank"
@@ -42,6 +50,7 @@ function App() {
           >
             <FaFacebook size={30} color="#b5b4b4" />
           </a>
+
         </div>
       </header>
 
