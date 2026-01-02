@@ -142,3 +142,7 @@
   margin-left: 240px;     /* width of .blog-list + some spacing */
   padding: 20px;          /* optional padding for content */
 }
+
+.center-text {
+  text-align: center;
+}

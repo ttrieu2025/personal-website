@@ -58,6 +58,23 @@ function App() {
         >Contact </GradientText></Link>
 
         </nav>
+         <div className="social-links">
+
+          <a
+            href="https://drive.google.com/file/d/1VivIUlGLGPmrLCDAIVx6TRuWQD03-FvR/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+          >         
+          
+        <GradientText
+          colors={["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"]}
+          animationSpeed={3}
+          showBorder={false}
+          className="custom-class"
+        >Resume </GradientText></a>
+
+          </div>
+      
       </header>
 
       {/* Pages */}
@@ -67,7 +84,12 @@ function App() {
         <Route path="/Blogs" element={<Blogs/>}/>
         <Route path="/Projects" element={<Projects/>}/>
         <Route path="/Contact" element={<Contact/>}/>
-      </Routes>      
+      </Routes> 
+
+
+
+
+
     </>
   )
 }

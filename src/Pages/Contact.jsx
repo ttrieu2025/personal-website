@@ -1,16 +1,34 @@
-import { FaLinkedin, FaInstagram, FaFacebook, FaEnvelope } from 'react-icons/fa'
+import { FaLinkedin, FaInstagram, FaFacebook} from 'react-icons/fa'
+import GradientText from '../components/GradientText'
 
 function Contact() {
   return (
-    
-    <div className="social-links">
+    <>
+        <h1> <GradientText
+            colors={["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"]}
+            animationSpeed={3}
+            showBorder={false}
+            className="custom-class"
+            > Contact Information </GradientText></h1> <br/>
+        
+                  <a
+            href="mailto:cat.trieu.truongminh@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Email: cattrieutruongminh@gmail.com  <br/>
+          </a>
+
           <a
             href="mailto:cat.trieu.truongminh@gmail.com"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FaEnvelope size={30} color="#b5b4b4" />
+            Tel: +1 (778) 636-2241
           </a>
+
+    
+        <div className="social-links">
 
           <a
             href="https://www.linkedin.com/in/mc-trieu-truong"
@@ -37,6 +55,7 @@ function Contact() {
           </a>
 
         </div>
+        </>
   )
 }
 
