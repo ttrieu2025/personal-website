@@ -146,3 +146,7 @@
 .center-text {
   text-align: center;
 }
+.blog-svg img {
+  width: 100%;   /* image will shrink to fit container */
+  display: block;    /* remove inline spacing */
+}
