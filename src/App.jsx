@@ -1,57 +1,63 @@
 import './App.css'
-import { FaLinkedin, FaInstagram, FaFacebook, FaEnvelope } from 'react-icons/fa'
 import { Routes, Route, Link } from 'react-router-dom'
+import GradientText from './components/GradientText'
 
 import Home from './Pages/Home'
 import Resources from './Pages/Resources'
 import Blogs from './Pages/Blogs'
 import Projects from './Pages/Projects'
+import Contact from './Pages/Contact'
 
 function App() {
   return (
     <>
       <header className="header">
+
         <nav className="nav-bar">
-          <Link to="/">Home</Link>
-          <Link to="/Resources">Resources</Link>
-          <Link to="/Blogs">Blogs</Link>
-          <Link to="/Projects">Projects</Link>
+          <Link to="/">        
+          <GradientText
+          colors={["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"]}
+          animationSpeed={3}
+          showBorder={false}
+          className="custom-class"
+          > Home </GradientText></Link>
+
+          <Link to="/Resources">
+          <GradientText
+          colors={["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"]}
+          animationSpeed={3}
+          showBorder={false}
+          className="custom-class"
+          > Resources</GradientText></Link>
+          
+          <Link to="/Blogs">
+  
+        <GradientText
+          colors={["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"]}
+          animationSpeed={3}
+          showBorder={false}
+          className="custom-class"
+        > Blogs </GradientText></Link>
+          
+        <Link to="/Projects">
+
+        <GradientText
+          colors={["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"]}
+          animationSpeed={3}
+          showBorder={false}
+          className="custom-class"
+        >Projects </GradientText></Link>
+        
+        <Link to="/Contact">
+
+        <GradientText
+          colors={["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"]}
+          animationSpeed={3}
+          showBorder={false}
+          className="custom-class"
+        >Contact </GradientText></Link>
+
         </nav>
-
-        <div className="social-links">
-          <a
-            href="mailto:cat.trieu.truongminh@gmail.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaEnvelope size={30} color="#b5b4b4" />
-          </a>
-
-          <a
-            href="https://www.linkedin.com/in/mc-trieu-truong"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaLinkedin size={30} color="#b5b4b4" />
-          </a>
-
-          <a
-            href="https://www.instagram.com/c.trevort_14/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaInstagram size={30} color="#b5b4b4" />
-          </a>
-
-          <a
-            href="https://www.facebook.com/cattrieu.truongminh.3/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaFacebook size={30} color="#b5b4b4" />
-          </a>
-
-        </div>
       </header>
 
       {/* Pages */}
@@ -60,6 +66,7 @@ function App() {
         <Route path="/Resources" element={<Resources/>}/>
         <Route path="/Blogs" element={<Blogs/>}/>
         <Route path="/Projects" element={<Projects/>}/>
+        <Route path="/Contact" element={<Contact/>}/>
       </Routes>      
     </>
   )

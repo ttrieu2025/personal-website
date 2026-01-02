@@ -40,9 +40,9 @@ function Blogs() {
         <h2>{current.title}</h2>
 
       <iframe src={current.pdf} 
-      width="800px" 
-      height="500px" 
-      style={{ border: "none" }} 
+          width="800px" 
+          height="500px" 
+          style={{ border: "none" }} 
       />
       </div>
     </div>
