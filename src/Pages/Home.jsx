@@ -11,7 +11,9 @@ function Home() {
         </div>
 
         <div className="intro-image">
-          <img src="/Feuerbach.svg" alt="Feuerbach Point" />
+          <img src="/Circuit.svg" alt="Circuit" 
+          width="200%" 
+          height="auto" />
         </div>
       </div>
     </div>

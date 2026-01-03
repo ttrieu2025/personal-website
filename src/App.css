@@ -102,20 +102,24 @@
   padding: 2rem;
 }
 
-.intro {
+.page {
   display: flex;
-  align-items: center;      /* vertical alignment */
-  gap: 2rem;                /* space between text and image */
+  justify-content: center; /* center the intro horizontally */
+  padding: 2rem;           /* optional spacing from top */
+}
+
+.intro {
+  display: flex;            /* put text and image side by side */
+  align-items: center;      /* vertically center text with image */
 }
 
 .intro-text {
-  flex: 1;
+  max-width: 500px;         /* optional, keeps text from being too wide */
 }
 
 .intro-image img {
-  width: 600px;
-  height: auto;
-  border-radius: 12px;      /* optional */
+  max-width: 100%;         /* adjust size of image */
+  height: auto;             /* maintain aspect ratio */
 }
 
 .Blogitems {
@@ -147,6 +151,6 @@
   text-align: center;
 }
 .blog-svg img {
-  width: 100%;   /* image will shrink to fit container */
+  width: 80%;   /* image will shrink to fit container */
   display: block;    /* remove inline spacing */
 }
