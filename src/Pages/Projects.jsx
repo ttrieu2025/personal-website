@@ -3,7 +3,7 @@ import GradientText from '../components/GradientText'
 function Projects() {
   return (
         <h1><GradientText
-          colors={["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"]}
+          colors={["#3aafa9", "#2b7a78", "#3aafa9", "#2b7a78", "#40ffaa"]}
           animationSpeed={3}
           showBorder={false}
           className="custom-class"

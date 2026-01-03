@@ -15,11 +15,12 @@
 
 a {
   font-weight: 500;
-  color: #ffffff;
+  color: #3aafa9;
   text-decoration: inherit;
   padding-left: 0; 
   margin-left: 0;
 }
+
 a:hover {
   color: #ffffff;
 }
@@ -38,6 +39,7 @@ h1 {
   padding: 0;
   font-size: 3.0em;
   line-height: 1.1;
+  color: 3a
 }
 
 button {
@@ -65,7 +67,7 @@ button:focus-visible {
     background-color: #ffffff;
   }
   a:hover {
-    color: #747bff;
+    color:  #2b7a78;
   }
   button {
     background-color: #f9f9f9;

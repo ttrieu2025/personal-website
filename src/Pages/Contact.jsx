@@ -4,28 +4,28 @@ import GradientText from '../components/GradientText'
 function Contact() {
   return (
     <>
-        <h1> <GradientText
-            colors={["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"]}
-            animationSpeed={3}
-            showBorder={false}
-            className="custom-class"
-            > Contact Information </GradientText></h1> <br/>
+            <h1><GradientText
+                  colors={["#3aafa9", "#2b7a78", "#3aafa9", "#2b7a78", "#40ffaa"]}
+                  animationSpeed={3}
+                  showBorder={false}
+                  className="custom-class"
+                >Contact Information  </GradientText></h1>  <br/>
         
-                  <a
+                  <p
             href="mailto:cat.trieu.truongminh@gmail.com"
             target="_blank"
             rel="noopener noreferrer"
           >
             Email: cattrieutruongminh@gmail.com  <br/>
-          </a>
+          </p>
 
-          <a
+          <p
             href="mailto:cat.trieu.truongminh@gmail.com"
             target="_blank"
             rel="noopener noreferrer"
           >
             Tel: +1 (778) 636-2241
-          </a>
+          </p>
 
     
         <div className="social-links">

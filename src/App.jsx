@@ -14,48 +14,23 @@ function App() {
       <header className="header">
 
         <nav className="nav-bar">
-          <Link to="/">        
-          <GradientText
-          colors={["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"]}
-          animationSpeed={3}
-          showBorder={false}
-          className="custom-class"
-          > Home </GradientText></Link>
+          <Link to="/">
+          <a> Home </a>
+          </Link>
 
           <Link to="/Resources">
-          <GradientText
-          colors={["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"]}
-          animationSpeed={3}
-          showBorder={false}
-          className="custom-class"
-          > Resources</GradientText></Link>
+          <a> Resources</a></Link>
           
           <Link to="/Blogs">
   
-        <GradientText
-          colors={["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"]}
-          animationSpeed={3}
-          showBorder={false}
-          className="custom-class"
-        > Blogs </GradientText></Link>
+          <a> Blogs</a></Link>
+
           
         <Link to="/Projects">
 
-        <GradientText
-          colors={["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"]}
-          animationSpeed={3}
-          showBorder={false}
-          className="custom-class"
-        >Projects </GradientText></Link>
-        
+        <a>Projects</a></Link>
         <Link to="/Contact">
-
-        <GradientText
-          colors={["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"]}
-          animationSpeed={3}
-          showBorder={false}
-          className="custom-class"
-        >Contact </GradientText></Link>
+        <a>Contact </a> </Link>
 
         </nav>
          <div className="social-links">
@@ -66,13 +41,7 @@ function App() {
             rel="noopener noreferrer"
           >         
           
-        <GradientText
-          colors={["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"]}
-          animationSpeed={3}
-          showBorder={false}
-          className="custom-class"
-        >Resume </GradientText></a>
-
+          Resume </a>
           </div>
       
       </header>
