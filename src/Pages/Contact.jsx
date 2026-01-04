@@ -12,15 +12,6 @@ function Contact() {
           >
             Email: cattrieutruongminh@gmail.com  <br/>
           </p>
-
-          <p
-            href="mailto:cat.trieu.truongminh@gmail.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Tel: +1 (778) 636-2241
-          </p>
-
     
         <div className="social-links">
 
