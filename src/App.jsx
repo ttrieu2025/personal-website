@@ -1,6 +1,5 @@
 import './App.css'
 import { Routes, Route, Link } from 'react-router-dom'
-import GradientText from './components/GradientText'
 
 import Home from './Pages/Home'
 import Resources from './Pages/Resources'
