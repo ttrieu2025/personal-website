@@ -39,7 +39,7 @@ function Blogs() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          source code
+          source code in LaTex
         </a>{" "}
         that you can copy and edit. Good luck with your study!
       </p>
