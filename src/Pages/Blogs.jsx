@@ -16,12 +16,6 @@ const Blogitems = [
   },
   {
     id: 2,
-    title: "A discussion on Kiepert's Theorem",
-    pdf: "./Kiepert.pdf",
-    comment: "A brief discussion on a series of well-known geometry theorems and their generalization, Kiepert's Theorem.",
-  },
-  {
-    id: 3,
     title: "Notes on Maxwell's Equations",
     pdf: "./Maxwell.pdf",
     comment: "Maxwell's equations are elegant not only because of their mathematical formulation but also because of their physical insights and applications in engineering disciplines.",
