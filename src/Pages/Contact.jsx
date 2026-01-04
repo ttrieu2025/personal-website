@@ -4,9 +4,8 @@ import GradientText from '../components/GradientText'
 function Contact() {
   return (
     <>
-            <h1> Contact Information  </h1>  <br/>
-        
-                  <p
+            <h1> Contact Information  </h1> 
+          <p
             href="mailto:cat.trieu.truongminh@gmail.com"
             target="_blank"
             rel="noopener noreferrer"
