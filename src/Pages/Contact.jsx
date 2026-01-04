@@ -1,4 +1,4 @@
-import { FaLinkedin, FaInstagram, FaFacebook} from 'react-icons/fa'
+import { FaLinkedin, FaInstagram, FaFacebook, FaGithub} from 'react-icons/fa'
 import GradientText from '../components/GradientText'
 
 function Contact() {
@@ -47,7 +47,14 @@ function Contact() {
           >
             <FaFacebook size={30} color="#b5b4b4" />
           </a>
-
+          
+          <a
+            href="https://github.com/ttrieu2025/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaGithub size={30} color="#b5b4b4" />
+          </a>
         </div>
         </>
   )
