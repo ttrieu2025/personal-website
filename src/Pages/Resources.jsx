@@ -1,8 +1,8 @@
 import { useState } from "react";
 
 const Blogitems = [
-  { id: 1, title: "MATH 256 Formula Sheet", pdf: "./Math256.pdf", href: "https://www.overleaf.com/read/zkqrdfbvtrjr#6f311d"},
-  { id: 2, title: "MATH 253 Formula Sheet", pdf: "./Math253.pdf", href: "https://www.overleaf.com/read/nqpjjnwgywwd#17331a" },
+  { id: 1, title: "MATH 256", pdf: "./Math256.pdf", href: "https://www.overleaf.com/read/zkqrdfbvtrjr#6f311d"},
+  { id: 2, title: "MATH 253", pdf: "./Math253.pdf", href: "https://www.overleaf.com/read/nqpjjnwgywwd#17331a" },
 ];
 
 function Blogs() {
@@ -11,6 +11,7 @@ function Blogs() {
   return (
     <div className="blogs-layout">
       <div className="blog-list">
+        <button-fake> FORMULA SHEETS </button-fake>
         {Blogitems.map((item) => (
           <div key={item.id}>
             <button
