@@ -1,8 +1,8 @@
 import { useState } from "react";
 
 const Blogitems = [
-  { id: 1, title: "MATH 256", pdf: "./Math256.pdf", href: "https://www.overleaf.com/read/zkqrdfbvtrjr#6f311d"},
-  { id: 2, title: "MATH 253", pdf: "./Math253.pdf", href: "https://www.overleaf.com/read/nqpjjnwgywwd#17331a" },
+  { id: 1, code: "MATH 256", pdf: "./Math256.pdf", href: "https://www.overleaf.com/read/zkqrdfbvtrjr#6f311d", title: "MATH 256 FORMULA SHEET"},
+  { id: 2, code: "MATH 253", pdf: "./Math253.pdf", href: "https://www.overleaf.com/read/nqpjjnwgywwd#17331a", title: "MATH 253 FORMULA SHEET"},
 ];
 
 function Blogs() {
@@ -18,7 +18,7 @@ function Blogs() {
               className={`Blogitems${current.id === item.id ? " active" : ""}`}
               onClick={() => setCurrent(item)}
             >
-              {item.title}
+              {item.code}
             </button>
             <br />
           </div>
@@ -39,10 +39,11 @@ function Blogs() {
           href={current.href}
           target="_blank"
           rel="noopener noreferrer"
+          style={{ textDecoration: "underline" }}
         >
-          source code in LaTex
+        source code
         </a>{" "}
-        that you can copy and edit. Good luck with your study!
+         in LaTex that you can copy and edit. Good luck with your study!
       </p>
       </div>
     </div>
