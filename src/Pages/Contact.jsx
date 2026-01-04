@@ -4,12 +4,7 @@ import GradientText from '../components/GradientText'
 function Contact() {
   return (
     <>
-            <h1><GradientText
-                  colors={["#3aafa9", "#2b7a78", "#3aafa9", "#2b7a78", "#40ffaa"]}
-                  animationSpeed={3}
-                  showBorder={false}
-                  className="custom-class"
-                >Contact Information  </GradientText></h1>  <br/>
+            <h1> Contact Information  </h1>  <br/>
         
                   <p
             href="mailto:cat.trieu.truongminh@gmail.com"
