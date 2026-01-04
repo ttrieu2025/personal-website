@@ -39,10 +39,11 @@ function App() {
             href="https://drive.google.com/file/d/1VivIUlGLGPmrLCDAIVx6TRuWQD03-FvR/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
+            className="resume-btn"
           >         
           
           Resume </a>
-          </div>
+        </div>
       
       </header>
 
@@ -54,10 +55,6 @@ function App() {
         <Route path="/Projects" element={<Projects/>}/>
         <Route path="/Contact" element={<Contact/>}/>
       </Routes> 
-
-
-
-
 
     </>
   )
