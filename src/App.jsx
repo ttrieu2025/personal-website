@@ -3,7 +3,6 @@ import { Routes, Route, Link } from 'react-router-dom'
 
 import Home from './Pages/Home'
 import Resources from './Pages/Resources'
-import Blogs from './Pages/Blogs'
 import Projects from './Pages/Projects'
 import Contact from './Pages/Contact'
 
@@ -19,11 +18,6 @@ function App() {
 
           <Link to="/Resources">
           <a> Resources</a></Link>
-          
-          <Link to="/Blogs">
-  
-          <a> Blogs</a></Link>
-
           
         <Link to="/Projects">
 
@@ -50,7 +44,6 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/Resources" element={<Resources/>}/>
-        <Route path="/Blogs" element={<Blogs/>}/>
         <Route path="/Projects" element={<Projects/>}/>
         <Route path="/Contact" element={<Contact/>}/>
       </Routes> 
