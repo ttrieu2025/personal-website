@@ -13,6 +13,7 @@ const experiences = [
 
 function Projects() {
   return (
+    <div className="page">
     <Stack direction="column" spacing={2} alignItems="center">
       {/* Avatars row */}
       <Stack direction="row" spacing={0} alignItems="center" justifyContent="center" className="avatars-row">
@@ -37,6 +38,7 @@ function Projects() {
           to simulate electrical components such as resistors, capacitors, inductors, and diodes.
         </span>
     </Stack>
+    </div>
   );
 }
 

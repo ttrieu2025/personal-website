@@ -47,7 +47,10 @@ function App() {
         <Route path="/Projects" element={<Projects/>}/>
         <Route path="/Contact" element={<Contact/>}/>
       </Routes> 
-
+      {/* Footer */}
+      <footer className="footer">
+        <small>© 2026 Trieu Truong. All rights reserved.</small>
+      </footer>
     </>
   )
 }

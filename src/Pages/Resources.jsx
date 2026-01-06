@@ -26,7 +26,7 @@ function Resources() {
   const [current, setCurrent] = useState(Insightitems[0]);
 
   return (
-    <div className="blogs-layout">
+    <div className="page">
       <div className="blog-list">
         <button-fake> INSIGHTS </button-fake>
         {Insightitems.map((item) => (
@@ -66,7 +66,6 @@ function Resources() {
     style={{ border: "none" }}
   />
   
-  {/* Only show LaTeX link for Formula Sheets */}
   {current.href && (
     <p>
       This is the{" "}

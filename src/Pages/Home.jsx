@@ -4,18 +4,25 @@ function Home() {
     <div className="page">
       <div className="intro">
         <div className="intro-text">
-<h2>Hello, I'm Trieu</h2>
+        <h2>Hi, I'm Trieu</h2>
           <p>
-          I am a second year Electrical Engineering student at UBC. I created this space to share my interests in mathematics and engineering, so I hope you will enjoy and find them helpful.
+          I am a 2nd-year Electrical Engineering student at UBC, focused on building a strong foundation in circuit theory, electromagnetics, and control systems.
           </p>
         </div>
 
         <div className="intro-image">
-          <img src="/Circuit.svg" alt="Circuit" 
-          width="200%" 
-          height="auto" />
+          <img src="/Circuit.svg" alt="Circuit"/>
         </div>
       </div>
+      {/* <div className="intro">
+        <div className="centered-section">
+        <h2>About Me</h2>
+          <p>My passion for mathematics and electricalmagnetism
+          have become my driving forces in both my academic and personal life since high school. While excelling in 
+          these field has opened many door for me, I believe that they are important for me to support my family and
+          community in daily life with practical technology solutions. </p>
+          </div>
+      </div> */}
     </div>
   );
 }

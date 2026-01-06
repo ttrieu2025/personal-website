@@ -7,6 +7,7 @@
   padding: 2rem;
   text-align: center;
   padding-top: 5rem;
+
 }
 
 /* Root for fonts, colors, CSS variables */
@@ -49,6 +50,7 @@
   width: screen;
 }
 
+
 .nav-bar a {
   text-decoration: none;
   color: #ffffff;
@@ -60,19 +62,17 @@
   color: #ffffff;
 }
 
+
 /* Social icons */
 .social-links {
-  margin-left: auto;
-  flex-shrink: 0;
-  gap: 25px;               /* space between icons */
-  align-items: center;     /* vertically align with nav links */
+  display: flex;
+  gap: 5px;               /* space between icons */
+  justify-content: center;   /* center items horizontally */
 }
 
 .social-links a {
-  display: inline-block;
+  justify-content: center; /* centers the icons horizontally */
   padding: 5px;            /* clickable area */
-  border-radius: 5px;
-  transition: 0.2s;
 }
 
 .social-links a:hover {
@@ -81,29 +81,39 @@
 }
 
 .page {
-  padding: 2rem;
+  display: flex;
+  flex-direction: column; /* stack items vertically */
+  justify-content: center; /* center items vertically in viewport */
+  align-items: center;     /* center items horizontally */
+  min-height: 100vh;       /* take full screen height */
+  text-align: center;      /* center inline content like email text */
+  
 }
 
-.page {
+.centered-section {
   display: flex;
-  justify-content: center; /* center the intro horizontally */
-  padding: 2rem;           /* optional spacing from top */
-  justify-content: flex-start; /* left-align content horizontally */
-  align-items: flex-start;     /* top-align content vertically */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* full screen */
+  text-align: center;
 }
+
 
 .intro {
-  display: flex;            /* put text and image side by side */
-  align-items: center;      /* vertically center text with image */
+  display: flex;            
+  align-items: center;      
+  margin-bottom: 3rem;   
 }
 
 .intro-text {
-  max-width: 500px;         /* optional, keeps text from being too wide */
+  max-width: 500px;         
+  white-space: normal;
 }
 
 .intro-image img {
-  max-width: 100%;         /* adjust size of image */
-  height: auto;             /* maintain aspect ratio */
+  max-width: 100%;         
+  height: auto;            
 }
 
 /* Blogs */
@@ -113,6 +123,7 @@
   color: #b5b4b4;
   font-weight: bold;
 }
+
 .blogs-layout {
   display: flex;  /* flex for sidebar + viewer */
   gap: 150px;
@@ -141,21 +152,17 @@
   display: block;    /* remove inline spacing */
 }
 
-.experience-container {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-
-
-
 a {
   font-weight: 500;
   color: #ffffff;
   text-decoration: inherit;
   padding-left: 0; 
   margin-left: 0;
+}
+
+small{
+  font-size: 0.8em;
+  color: #b5b4b4;
 }
 
 a:hover {
@@ -171,13 +178,14 @@ body {
 }
 
 h1 {
-  text-align: left;
+  text-align: center;
   margin: 0;
   padding: 0;
   font-size: 3.0em;
   line-height: 1.1;
   color: 3a
 }
+
 
 h2 {
   text-align: center;
@@ -202,6 +210,7 @@ button {
 button:hover {
   border-color: #b5b4b4;
 }
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
