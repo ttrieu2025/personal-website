@@ -42,11 +42,11 @@
   background-color: #000000;
 }
 footer{
-  text-align: left;
-  width: 100vw;        
-  max-width: 100%; 
-  z-index: 1000; ;
-  width: screen;
+  position:fixed;
+  bottom:10px;
+  left:10px;
+  padding: 10px 20px; /* padding inside the footer */
+  z-index: 1000; 
 }
 
 /* Navigation bar */
