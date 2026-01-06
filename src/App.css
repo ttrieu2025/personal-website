@@ -87,7 +87,7 @@
   align-items: center;     /* center items horizontally */
   min-height: 100vh;       /* take full screen height */
   text-align: center;      /* center inline content like email text */
-  
+  margin-top: -3rem;
 }
 
 .centered-section {
