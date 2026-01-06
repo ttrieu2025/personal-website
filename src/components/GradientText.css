@@ -1,7 +1,7 @@
 .animated-gradient-text {
   position: relative;
   margin: 0 auto;
-  display: inline-flex;  /* Change from flex to inline-flex */
+  display: inline-flex;  
   max-width: fit-content;
   flex-direction: row;
   align-items: center;
@@ -11,7 +11,7 @@
   transition: box-shadow 0.5s ease-out;
   overflow: hidden;
   cursor: pointer;
-  white-space: nowrap;  /* Add this */
+  white-space: nowrap;  
 }
 
 .animated-gradient-text.with-border {
@@ -45,11 +45,11 @@
 }
 
 .text-content {
-  display: inline;  /* Change to inline */
+  display: inline; 
   position: relative;
   z-index: 2;
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
-  white-space: nowrap;  /* Add this */
+  white-space: nowrap; 
 }

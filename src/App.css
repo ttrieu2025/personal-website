@@ -41,6 +41,13 @@
 
   background-color: #000000;
 }
+footer{
+  text-align: left;
+  width: 100vw;        
+  max-width: 100%; 
+  z-index: 1000; ;
+  width: screen;
+}
 
 /* Navigation bar */
 .nav-bar {
