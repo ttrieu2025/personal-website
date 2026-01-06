@@ -1,3 +1,4 @@
+import GradientText from '../components/GradientText';
 import Stack from '@mui/material/Stack';
 import Avatar from '@mui/material/Avatar';
 import Box from '@mui/material/Box';

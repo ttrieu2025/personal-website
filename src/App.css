@@ -1,3 +1,6 @@
+/* Page styles */
+
+/* Root for app container width and padding below fixed headers */
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -6,41 +9,20 @@
   padding-top: 5rem;
 }
 
+/* Root for fonts, colors, CSS variables */
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #00000000);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #ffffff);
-}
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #000000;
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .header {
@@ -59,7 +41,7 @@
   background-color: #000000;
 }
 
-/* Navigation links */
+/* Navigation bar */
 .nav-bar {
   display: fixed;
   gap: 20px;               /* space between links */
@@ -106,6 +88,8 @@
   display: flex;
   justify-content: center; /* center the intro horizontally */
   padding: 2rem;           /* optional spacing from top */
+  justify-content: flex-start; /* left-align content horizontally */
+  align-items: flex-start;     /* top-align content vertically */
 }
 
 .intro {
@@ -122,14 +106,16 @@
   height: auto;             /* maintain aspect ratio */
 }
 
+/* Blogs */
+
 .Blogitems {
   text-decoration: none;
   color: #b5b4b4;
   font-weight: bold;
 }
 .blogs-layout {
-  display: fixed;
-  gap: 150px; /* space between button list and viewer */
+  display: flex;  /* flex for sidebar + viewer */
+  gap: 150px;
 }
 
 .blog-list {
@@ -161,45 +147,75 @@
   gap: 20px;
 }
 
-.experience-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 16px;
+
+
+
+a {
+  font-weight: 500;
+  color: #ffffff;
+  text-decoration: inherit;
+  padding-left: 0; 
+  margin-left: 0;
 }
 
-.bullet-line {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
+a:hover {
+  color: #ffffff;
 }
 
-.bullet {
-  width: 10px;
-  height: 10px;
-  background-color: #555;
-  border-radius: 50%;
-  z-index: 1;
-}
-
-.line {
-  width: 2px;
-  flex: 1;
-  background-color: #ccc;
-  margin-top: 2px;
-}
-  
-.experience-content {
-  flex: 1;
-}
-
-.experience-content h3 {
+body {
   margin: 0;
-  font-weight: 600;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
 }
 
-.experience-content .date {
-  font-size: 0.85rem;
-  color: gray;
-  margin-bottom: 4px;
+h1 {
+  text-align: left;
+  margin: 0;
+  padding: 0;
+  font-size: 3.0em;
+  line-height: 1.1;
+  color: 3a
+}
+
+h2 {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  font-size: 2.0em;
+  line-height: 1;
+  color: 3a
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #0b0a0a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #b5b4b4;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+
+button-fake {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 1000;
+  font-family: inherit;
+  background-color: #0b0a0a;
+  cursor: pointer;
+  transition: border-color 0.25s;
 }

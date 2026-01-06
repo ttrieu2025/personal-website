@@ -1,5 +1,4 @@
 import { FaLinkedin, FaInstagram, FaFacebook, FaGithub} from 'react-icons/fa'
-import GradientText from '../components/GradientText'
 
 function Contact() {
   return (

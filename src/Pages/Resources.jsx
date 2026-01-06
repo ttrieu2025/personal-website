@@ -57,7 +57,7 @@ function Resources() {
       
 
 <div className="blog-viewer">
-  <h2>{current.title}</h2>
+  <h2>{current.title}</h2><br/>
   {/* {current.comment && <p>{current.comment}</p>} */}
   <iframe
     src={current.pdf}
