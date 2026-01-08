@@ -1,3 +1,13 @@
+
+
+/* Root font scaling for responsiveness */
+@media (max-width: 1200px) {
+  html {
+    font-size: 15px;
+  }
+}
+
+
 /* Page styles */
 
 /* Root for app container width and padding below fixed headers */
@@ -51,7 +61,7 @@ footer{
 
 /* Navigation bar */
 .nav-bar {
-  display: fixed;
+  display: flex;
   gap: 20px;               /* space between links */
   flex-shrink: 1; 
   width: screen;
@@ -238,4 +248,66 @@ button-fake {
   background-color: #0b0a0a;
   cursor: pointer;
   transition: border-color 0.25s;
+}
+
+/* Other Devices */
+
+/* Tablets and below */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column; /* stack logo + nav vertically */
+    padding: 10px;
+  }
+
+  .blogs-layout {
+    flex-direction: column; /* stack sidebar + viewer */
+    gap: 1rem;
+  }
+
+  .blog-list {
+    position: relative;
+    width: 100%;
+    top: 0;
+    left: 0;
+    margin-bottom: 1rem;
+  }
+
+  .blog-viewer {
+    margin-left: 0;
+    padding: 0;
+  }
+
+  .intro {
+    flex-direction: column; /* stack text + image */
+    margin-bottom: 2rem;
+  }
+}
+
+/* Phones */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .header, .footer {
+    padding: 8px;
+  }
+
+  .intro-text {
+    max-width: 90%;
+    font-size: 0.9rem;
+  }
+
+  .intro-image img {
+    max-width: 80%;
+  }
+
+  .nav-bar a {
+    padding: 6px 8px;
+    font-size: 0.9rem;
+  }
 }
