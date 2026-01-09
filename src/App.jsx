@@ -34,7 +34,7 @@ function App() {
             rel="noopener noreferrer"
             className="resume-btn"
           >         
-          
+
           Resume </a>
         </div>
       
