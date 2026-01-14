@@ -29,7 +29,7 @@ function App() {
          <div className="social-links">
 
           <a
-            href="https://drive.google.com/file/d/1VivIUlGLGPmrLCDAIVx6TRuWQD03-FvR/view?usp=sharing"
+            href="https://drive.google.com/file/d/1zz8ws9XiUhCh1foYRqaSn_Xg807GAC_h/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             className="resume-btn"
