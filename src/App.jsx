@@ -30,6 +30,7 @@ function App() {
 
           <a
             href="https://drive.google.com/file/d/1wW6WuvkttrJS7zTCpU7Q4jkoKqghzdFD/view?usp=sharing"
+            target="_blank"
             rel="noopener noreferrer"
             className="resume-btn"
           >         

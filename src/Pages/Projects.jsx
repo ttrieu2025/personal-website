@@ -82,7 +82,12 @@ function Projects() {
             </Typography>
           </CardContent>
           <CardActions>
-            <Button size="small" sx={{ color: '#b5b5b5' }}>Learn More</Button>
+            <Button size="small" sx={{ color: '#b5b5b5' }}            
+            href="https://github.com/ttrieu2025/Tron-light-cycle-game"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="resume-btn">Learn More</Button>
+            
           </CardActions>
         </Card>
       </Stack>
