@@ -78,7 +78,7 @@ function Projects() {
             </Typography>
             <Typography variant="body2" sx={{ mt: 1 }}>
               BLDC-driven haptic feedback system <br />
-              simulating electronic components (R, L, C Diodes)
+              simulating electronic components (R, L, C, Diodes)
             </Typography>
           </CardContent>
           <CardActions>

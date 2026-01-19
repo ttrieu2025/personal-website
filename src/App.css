@@ -1,5 +1,3 @@
-
-
 /* Root font scaling for responsiveness */
 @media (max-width: 1200px) {
   html {
@@ -17,7 +15,6 @@
   padding: 2rem;
   text-align: center;
   padding-top: 5rem;
-
 }
 
 /* Root for fonts, colors, CSS variables */
@@ -46,11 +43,12 @@
   justify-content: space-between;
   align-items: center;
 
-  padding: 10px 40px;   /* space from top + left/right */
+  padding: 10px 50px;   /* space from top + left/right */
   box-sizing: border-box;
 
   background-color: #000000;
 }
+
 footer{
   position:fixed;
   bottom:10px;
