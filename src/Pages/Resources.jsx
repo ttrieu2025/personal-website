@@ -1,6 +1,5 @@
 import { useState } from "react";
 
-
 const Insightitems = [
   {
     id: 1,
@@ -20,7 +19,6 @@ const Formulasheetitems = [
   { id: 3, code: "MATH 256", pdf: "./Math256.pdf", href: "https://github.com/ttrieu2025/latex-code/blob/main/math-256.tex", title: "MATH 256 Formula Sheet"},
   { id: 4, code: "MATH 253", pdf: "./Math253.pdf", href: "https://github.com/ttrieu2025/latex-code/blob/main/math-253.tex", title: "MATH 253 Formula Sheet"},
 ];
-
 
 function Resources() {
   const [current, setCurrent] = useState(Insightitems[0]);
@@ -54,36 +52,36 @@ function Resources() {
         ))}
       </div>
 
-      
-
-<div className="blog-viewer">
-  <h2>{current.title}</h2><br/>
-  {/* {current.comment && <p>{current.comment}</p>} */}
-  <iframe
-    src={current.pdf}
-    width="800px"
-    height="500px"
-    style={{ border: "none" }}
-  />
-  
-  {current.href && (
-    <p>
-      This is the{" "}
-      <a
-        href={current.href}
-        target="_blank"
-        rel="noopener noreferrer"
-        style={{ textDecoration: "underline" }}
-      >
-        source code
-      </a>{" "}
-      in LaTex that you can copy and edit. Good luck with your study!
-    </p>
-  )}
-</div>
-</div>
+      <div className="blog-viewer">
+        <h2>{current.title}</h2><br/>
+        {/* {current.comment && <p>{current.comment}</p>} */}
+        <iframe
+          src={current.pdf}
+          style={{ 
+            border: "none",
+            width: "800px",
+            maxWidth: "100%",
+            height: "500px"
+          }}
+        />
+        
+        {current.href && (
+          <p>
+            This is the{" "}
+            <a
+              href={current.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ textDecoration: "underline" }}
+            >
+              source code
+            </a>{" "}
+            in LaTex that you can copy and edit. Good luck with your study!
+          </p>
+        )}
+      </div>
+    </div>
   );
 }
 
 export default Resources;
-
