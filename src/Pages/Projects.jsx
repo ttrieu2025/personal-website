@@ -40,7 +40,7 @@ function Projects() {
             >
               <Avatar 
                 alt="Trieu Truong" 
-                src="Laplace.png" 
+                src="/Laplace.png" 
                 sx={{ 
                   width: 50, 
                   height: 50, 
@@ -58,7 +58,7 @@ function Projects() {
               />
               <Avatar 
                 alt="UBC Open Robotics" 
-                src="open-robotics.jpg" 
+                src="/open-robotics.jpg" 
                 sx={{ 
                   width: 50, 
                   height: 50, 
@@ -108,7 +108,7 @@ function Projects() {
             >
               <Avatar 
                 alt="Tron" 
-                src="Tron.png" 
+                src="/Tron.png" 
                 sx={{ 
                   width: 50, 
                   height: 50, 
