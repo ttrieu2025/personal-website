@@ -97,14 +97,12 @@ function App() {
     </nav>
   </div>
 </header>
-      <HashRouter>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/resources" element={<Resources/>}/>
         <Route path="/projects" element={<Projects/>}/>
         <Route path="/contact" element={<Contact/>}/>
       </Routes> 
-      </HashRouter>
 
       <footer className="footer">
         <small>© 2026 Trieu Truong. All rights reserved.</small>
