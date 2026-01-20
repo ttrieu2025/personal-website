@@ -124,7 +124,7 @@ function Projects() {
               Computing Systems Project
             </Typography>
             <Typography variant="h5" component="div">
-              Tron light cycle game
+              Tron Light Cycle Game
             </Typography>
             <Typography variant="body2" sx={{ mt: 1 }}>
               A game built in embedded C, <br />
