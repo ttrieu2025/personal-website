@@ -99,9 +99,9 @@ function App() {
 </header>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/Resources" element={<Resources/>}/>
-        <Route path="/Projects" element={<Projects/>}/>
-        <Route path="/Contact" element={<Contact/>}/>
+        <Route path="/resources" element={<Resources/>}/>
+        <Route path="/projects" element={<Projects/>}/>
+        <Route path="/contact" element={<Contact/>}/>
       </Routes> 
 
       <footer className="footer">
