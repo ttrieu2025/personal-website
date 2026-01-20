@@ -4,7 +4,7 @@ function Home() {
     <div className="page">
       <div className="intro">
         <div className="intro-text">
-        <h2>Hi, I'm Trieu</h2>
+        <h2 class="font-bold">Hi, I'm Trieu</h2>
           <p>
           I am a 2nd-year Electrical Engineering student at UBC, focused on building a strong foundation in circuit theory, electromagnetics, and control systems.
           </p>

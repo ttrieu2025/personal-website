@@ -2,8 +2,8 @@ import { FaLinkedin, FaInstagram, FaFacebook, FaGithub } from 'react-icons/fa';
 
 function Contact() {
   return (
-    <div className="page">
-      <h1>Contact Information</h1>
+    <div className="page" style={{ gap: "10px" }}>
+      <h1 className="font-bold">Contact Information</h1>
 
       {/* Proper mailto link */}
       <p className="email">

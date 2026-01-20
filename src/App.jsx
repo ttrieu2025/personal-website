@@ -9,7 +9,7 @@ import Contact from './Pages/Contact'
 function App() {
   return (
     <>
-      <header className="header">
+      <header className="header" >
 
         <nav className="nav-bar">
           <Link to="/">
