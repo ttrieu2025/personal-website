@@ -51,7 +51,7 @@ function App() {
 
           {/* Mobile Dropdown */}
           <nav
-            className={`md:hidden absolute top-full left-0 w-full bg-white shadow-md transition-all duration-300 overflow-hidden
+            className={`md:hidden absolute top-full left-0 w-full shadow-md transition-all duration-300 overflow-hidden
               ${isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}
             `}
           >
