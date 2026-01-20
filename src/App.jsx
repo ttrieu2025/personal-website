@@ -42,13 +42,13 @@ function App() {
       <Link to="/" className="px-4 py-2 ">
         Home
       </Link>
-      <Link to="/Resources" className="px-4 py-2 ">
+      <Link to="/resources" className="px-4 py-2 ">
         Resources
       </Link>
-      <Link to="/Projects" className="px-4 py-2 ">
+      <Link to="/projects" className="px-4 py-2 ">
         Projects
       </Link>
-      <Link to="/Contact" className="px-4 py-2 ">
+      <Link to="/contact" className="px-4 py-2 ">
         Contact
       </Link>
     </nav>
