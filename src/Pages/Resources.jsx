@@ -5,13 +5,19 @@ const Insightitems = [
     id: 1,
     title: "Lagrange Multipliers in Optimization",
     pdf: "./Lagrange.pdf",
-    comment: "When dealing with problems such as proving inequalities or finding maxima and minima, a constraint is often provided. Lagrange multipliers method is introduced as a powerful tool to solve such problems.",
+    // comment: "When dealing with problems such as proving inequalities or finding maxima and minima, a constraint is often provided. Lagrange multipliers method is introduced as a powerful tool to solve such problems.",
   },
   {
     id: 2,
     title: "Notes on Maxwell's Equations",
     pdf: "./Maxwell.pdf",
-    comment: "Maxwell's equations are elegant not only because of their mathematical formulation but also because of their physical insights and applications in engineering disciplines.",
+    // comment: "Maxwell's equations are elegant not only because of their mathematical formulation but also because of their physical insights and applications in engineering disciplines.",
+  },
+    {
+    id: 3,
+    title: "Kiepert’s Theorem in Triangle Geometry",
+    pdf: "./Kiepert.pdf",
+    // comment: "Kiepert's theorem is a beautiful result in triangle geometry that relates to the construction of equilateral triangles on the sides of a triangle.",
   },
 ];
 
