@@ -3,10 +3,10 @@ function Home() {
   return (
     <div className="page">
       <div className="intro">
-        <div className="intro-text">
-        <h2 class="font-bold">Hi, I'm Trieu</h2>
+        <div className="intro-text flex flex-col gap-2">
+        <h2 className="font-bold"> Hi, I'm Trieu</h2>
           <p>
-          I am a 2nd-year Electrical Engineering student at UBC, focused on building a strong foundation in circuit theory, electromagnetics, and control systems.
+          I am a 2nd-year Electrical Engineering student at UBC, focused on building a strong foundation in circuit theory and electromagnetics.
           </p>
         </div>
 
