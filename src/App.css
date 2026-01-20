@@ -311,3 +311,18 @@ button-fake {
     font-size: 0.9rem;
   }
 }
+
+.hamburger {
+  display: none; /* Hidden on desktop */
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 1001;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block; /* Shows on mobile */
+  }
+}

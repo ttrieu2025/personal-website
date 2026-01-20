@@ -24,8 +24,8 @@ function Resources() {
   const [current, setCurrent] = useState(Insightitems[0]);
 
   return (
-    <div className="page">
-      <div className="blog-list">
+    <div className="page pt-20">
+      <div className="blog-list pt-5">
         <button-fake> INSIGHTS </button-fake>
         {Insightitems.map((item) => (
           <div key={item.id}>
@@ -57,6 +57,8 @@ function Resources() {
         {/* {current.comment && <p>{current.comment}</p>} */}
         <iframe
           src={current.pdf}
+          className="w-full h-full border-0"
+
           style={{ 
             border: "none",
             width: "800px",
