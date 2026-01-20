@@ -83,7 +83,7 @@ function Projects() {
           </CardContent>
           <CardActions>
             <Button size="small" sx={{ color: '#b5b5b5' }}>
-              Learn More
+              Coming Soon
             </Button>
           </CardActions>
         </Card>
@@ -121,7 +121,7 @@ function Projects() {
               gutterBottom 
               sx={{ color: '#b5b4b4', fontSize: 14, mt: 2 }}
             >
-              University Of British Columbia
+              Computing Systems Project
             </Typography>
             <Typography variant="h5" component="div">
               Tron light cycle game
