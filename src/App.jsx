@@ -1,5 +1,5 @@
 import './App.css'
-import { Routes, Route, Link } from 'react-router-dom'
+import { Routes, Route, Link, HashRouter } from 'react-router-dom'
 import { useState } from 'react'
 import { Menu, X } from 'lucide-react'
 
@@ -97,12 +97,14 @@ function App() {
     </nav>
   </div>
 </header>
+      <HashRouter>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/resources" element={<Resources/>}/>
         <Route path="/projects" element={<Projects/>}/>
         <Route path="/contact" element={<Contact/>}/>
       </Routes> 
+      </HashRouter>
 
       <footer className="footer">
         <small>© 2026 Trieu Truong. All rights reserved.</small>
