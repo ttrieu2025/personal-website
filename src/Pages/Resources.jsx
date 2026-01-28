@@ -11,11 +11,6 @@ const Insightitems = [
     title: "Notes on Maxwell's Equations",
     pdf: "./Maxwell.pdf",
   },
-    {
-    id: 3,
-    title: "Kiepert’s Theorem in Triangle Geometry",
-    pdf: "./Kiepert.pdf",
-  },
 ];
 
 const Formulasheetitems = [
