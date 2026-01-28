@@ -30,7 +30,7 @@ function Projects() {
           sx={{ 
             minWidth: { xs: '100%', sm: 300, md: 260 },
             maxWidth: { xs: '100%', sm: 400, md: 400 },
-            backgroundColor: '#222222',
+            backgroundColor: '#171716',
             color: '#ffffff',
             borderRadius: 3,
           }}
@@ -102,7 +102,7 @@ function Projects() {
           sx={{ 
             minWidth: { xs: '100%', sm: 300, md: 260 },
             maxWidth: { xs: '100%', sm: 400, md: 400 },
-            backgroundColor: '#222222',
+            backgroundColor: '#171716',
             color: '#ffffff',
             borderRadius: 3,
           }}
