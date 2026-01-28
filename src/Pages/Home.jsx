@@ -17,7 +17,9 @@ function Home() {
             transition-all duration-300
             hover:scale-105
             cursor-pointer"
-          style={{  width: "800px",
+          style={{  width: "70%",
+                    height: "auto",
+                    maxWidth: "950px",
                     borderRadius: "4%" 
                 }} 
           />
