@@ -4,6 +4,7 @@ This repository contains the source code for my personal website. The site showc
 
 # Built With
 
-* HTML/TailwindCSS
-* JavaScript
-* Vite/React Framework, Next.js
+* HTML/TailwindCSS, JavaScript
+* Vite/React Framework, Next.js, Vercel
+
+[Visit the website](https://trieu-truong.vercel.app/)
