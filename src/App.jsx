@@ -6,7 +6,6 @@ import { Menu, X } from 'lucide-react'
 import Home from './Pages/Home'
 import Resources from './Pages/Resources'
 import Projects from './Pages/Projects'
-import Contact from './Pages/Contact'
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -34,7 +33,6 @@ function App() {
             <Link to="/" className="px-4 py-2">Home</Link>
             <Link to="/resources" className="px-4 py-2">Resources</Link>
             <Link to="/projects" className="px-4 py-2">Projects</Link>
-            <Link to="/contact" className="px-4 py-2">Contact</Link>
           </nav>
 
           {/* Desktop Resume Button */}
@@ -65,9 +63,6 @@ function App() {
               <Link to="/projects" onClick={closeMenu} className="px-4 py-3 border-b">
                 Projects
               </Link>
-              <Link to="/contact" onClick={closeMenu} className="px-4 py-3 border-b">
-                Contact
-              </Link>
               <a
                 href="https://drive.google.com/file/d/1wW6WuvkttrJS7zTCpU7Q4jkoKqghzdFD/view?usp=sharing"
                 target="_blank"
@@ -88,7 +83,6 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/resources" element={<Resources />} />
         <Route path="/projects" element={<Projects />} />
-        <Route path="/contact" element={<Contact />} />
       </Routes>
 
       {/* FOOTER */}
