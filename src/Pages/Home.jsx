@@ -11,7 +11,16 @@ function Home() {
         </div>
 
         <div className="intro-image flex justify-center">
-          <img src="/Circuit.svg" alt="Circuit"/>
+          <img src="/profile.png" alt="Circuit" 
+          className="
+            shadow-[0_20px_50px_rgba(0,0,0,0.35)]
+            transition-all duration-300
+            hover:scale-105
+            cursor-pointer"
+          style={{  width: "800px",
+                    borderRadius: "4%" 
+                }} 
+          />
         </div>
       </div>
     </div>

@@ -21,7 +21,12 @@ function Projects() {
         }}
       >
         {/* First Card */}
-        <Card 
+        <Card className="
+            shadow-[0_20px_50px_rgba(0,0,0,0.35)]
+            transition-all duration-300
+            hover:scale-105
+            cursor-pointer"
+
           sx={{ 
             minWidth: { xs: '100%', sm: 300, md: 260 },
             maxWidth: { xs: '100%', sm: 400, md: 400 },
@@ -89,7 +94,11 @@ function Projects() {
         </Card>
 
         {/* Second Card */}
-        <Card 
+        <Card className="
+            shadow-[0_20px_50px_rgba(0,0,0,0.35)]
+            transition-all duration-300
+            hover:scale-105
+            cursor-pointer"
           sx={{ 
             minWidth: { xs: '100%', sm: 300, md: 260 },
             maxWidth: { xs: '100%', sm: 400, md: 400 },
