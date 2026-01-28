@@ -14,9 +14,9 @@ const Insightitems = [
 ];
 
 const Formulasheetitems = [
-  { id: 3, code: "MATH 256", pdf: "./Math256.pdf", href: "https://github.com/ttrieu2025/latex-code/blob/main/math-256.tex", title: "MATH 256 Formula Sheet"},
-  { id: 4, code: "MATH 253", pdf: "./Math253.pdf", href: "https://github.com/ttrieu2025/latex-code/blob/main/math-253.tex", title: "MATH 253 Formula Sheet"},
-  { id: 5, code: "MATH 264", pdf: "./Math264.pdf", href: "https://github.com/ttrieu2025/latex-code/blob/main/math-264.tex", title: "MATH 264 Formula Sheet"},
+  { id: 3, code: "MATH 264", pdf: "./Math264.pdf", href: "https://github.com/ttrieu2025/latex-code/blob/main/math-264.tex", title: "MATH 264 Formula Sheet"},
+  { id: 4, code: "MATH 256", pdf: "./Math256.pdf", href: "https://github.com/ttrieu2025/latex-code/blob/main/math-256.tex", title: "MATH 256 Formula Sheet"},
+  { id: 5, code: "MATH 253", pdf: "./Math253.pdf", href: "https://github.com/ttrieu2025/latex-code/blob/main/math-253.tex", title: "MATH 253 Formula Sheet"},
 ];
 
 function Resources() {
