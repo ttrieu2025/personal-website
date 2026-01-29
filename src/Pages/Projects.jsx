@@ -9,215 +9,126 @@ import Box from '@mui/material/Box';
 
 function Projects() {
   return (
-    <div className="page">
-      <Stack 
-        direction={{ xs: 'column', sm: 'column', md: 'row' }}
-        spacing={2}
-        justifyContent="center"
-        alignItems="center"
-        sx={{ 
-          padding: { xs: 2, sm: 2, md: 0 },
-          width: '100%'
-        }}
-      >
-        {/* First Card */}
-        <Card className="
-            shadow-[0_20px_50px_rgba(0,0,0,0.35)]
-            transition-all duration-300
-            hover:scale-105
-            cursor-pointer"
+    <div className="flex justify-center items-start min-h-screen mt-12 px-6 pb-12">
+      
+      <div className="bg-[#111111] border border-white/10 shadow-2xl rounded-[2.5rem] p-8 md:p-16 max-w-6xl w-full">
+        
+        <div className="mb-12">
+          <h2 className="text-white font-extrabold text-4xl tracking-tight mb-2">
+            Featured Projects
+          </h2>
+          
+          </div>
 
-          sx={{ 
-            minWidth: { xs: '100%', sm: 300, md: 260 },
-            maxWidth: { xs: '100%', sm: 400, md: 400 },
-            color: '#b5b4b4',
-            borderRadius: 3,
-            
-          }}
+        <Stack 
+          direction={{ xs: 'column', md: 'row' }}
+          spacing={4}
+          justifyContent="flex-start"
+          alignItems="stretch"
         >
-          <CardContent>
-            <Stack 
-              direction="row" 
-              spacing={0} 
-              alignItems="center" 
-              justifyContent="center" 
-              padding={0.5}
-            >
-              <Avatar 
-                alt="Trieu Truong" 
-                src="/Laplace.png" 
-                sx={{ 
-                  width: 50, 
-                  height: 50, 
-                  zIndex: 1 
-                }} 
-              />
-              <Box 
-                sx={{ 
-                  height: '2px', 
-                  width: '40px', 
-                  backgroundColor: '#b5b4b4', 
-                  zIndex: 0 
-                }} 
-              />
-              <Avatar 
-                alt="UBC Open Robotics" 
-                src="/open-robotics.jpg" 
-                sx={{ 
-                  width: 50, 
-                  height: 50, 
-                  border: '2px solid #ffffff', 
-                  zIndex: 0 
-                }} 
-              />
-            </Stack>
-            <Typography 
-                gutterBottom 
-                sx={{ 
-                  color: '#000000', // Indigo accent for the "category" text
-                  fontSize: 12, 
-                  fontWeight: 700, 
-                  textTransform: 'uppercase', 
-                  letterSpacing: '0.1em',
-                  mt: 2 
-                }}
-              >
+
+          <Card 
+            sx={{ 
+              flex: 1,
+              backgroundColor: '#1a1a1a', 
+              border: '1px solid rgba(255, 255, 255, 0.05)',
+              borderRadius: '2rem',
+              transition: 'all 0.4s ease',
+              '&:hover': {
+                transform: 'translateY(-10px)',
+                borderColor: 'rgba(255, 255, 255, 0.2)',
+                boxShadow: '0 20px 40px rgba(0,0,0,0.4)'
+              }
+            }}
+          >
+            <CardContent sx={{ p: 4 }}>
+              <Stack direction="row" spacing={0} alignItems="center" mb={3}>
+                <Avatar src="/Laplace.png" sx={{ width: 56, height: 56, border: '2px solid #222' }} />
+                <Box sx={{ height: '2px', width: '30px', backgroundColor: 'rgba(255,255,255,0.1)' }} />
+                <Avatar src="/open-robotics.jpg" sx={{ width: 56, height: 56, border: '2px solid #222' }} />
+              </Stack>
+
+              <Typography sx={{ color: 'rgba(255,255,255,0.5)', fontSize: 12, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.15em', mb: 1 }}>
                 UBC Open Robotics
               </Typography>
-            <Typography 
-              variant="h5" 
-              component="div" 
-              sx={{ 
-                fontWeight: 800,           // Extra bold for impact
-                letterSpacing: '-0.02em',  // Tighter tracking for a modern feel
-                color: '#1a1a1a',          // Deep charcoal instead of pure black
-                fontFamily: '"Inter", "Roboto", sans-serif' 
-              }}
-            >
-              Haptic Knob Project
-            </Typography>
-            <Typography 
-              variant="body2" 
-              sx={{ 
-                mt: 1.5, 
-                color: '#4b5563',          // Tailwind-style Gray-600 for better hierarchy
-                lineHeight: 1.6,           // More breathing room between lines
-                fontSize: '0.95rem',
-                fontWeight: 400
-              }}
-            >
-              BLDC-driven haptic feedback system <br />
-              simulating electronic components (R, L, C, Diodes)
-            </Typography>
-          </CardContent>
-          <CardActions>
-            <Button 
-              size="small" 
-              sx={{ color: '#000000' ,
-
-              '&:hover': {
-              backgroundColor: '#000000', // Changes background to black
-              color: '#ffffff'
-            }
-            }}
-            >
-              Coming Soon
-            </Button>
-          </CardActions>
-        </Card>
-
-        {/* Second Card */}
-        <Card className="
-            shadow-[0_20px_50px_rgba(0,0,0,0.35)]
-            transition-all duration-300
-            hover:scale-105
-            cursor-pointer"
-          sx={{ 
-            minWidth: { xs: '100%', sm: 300, md: 260 },
-            maxWidth: { xs: '100%', sm: 400, md: 400 },
-            color: '#b5b4b4',
-            borderRadius: 3,
-          }}
-        >
-          <CardContent>
-            <Stack 
-              direction="row" 
-              spacing={0} 
-              alignItems="center" 
-              justifyContent="center" 
-              padding={0.5}
-            >
-              <Avatar 
-                alt="Tron" 
-                src="/Tron.png" 
+              <Typography variant="h5" sx={{ color: '#ffffff', fontWeight: 800, mb: 2, tracking: '-0.02em' }}>
+                Haptic Knob Project
+              </Typography>
+              <Typography sx={{ color: 'rgba(255,255,255,0.6)', lineHeight: 1.7, fontSize: '0.95rem' }}>
+                BLDC-driven haptic feedback system simulating electronic components like Resistors, Inductors, and Diodes.
+              </Typography>
+            </CardContent>
+            <CardActions sx={{ p: 4, pt: 0 }}>
+              <Button 
+                disabled
+                size="medium" 
                 sx={{ 
-                  width: 50, 
-                  height: 50, 
-                  border: '2px solid #ffffff', 
-                  zIndex: 1 
-                }} 
-              />
-            </Stack>
-            <Typography 
-                gutterBottom 
-                sx={{ 
-                  color: '#000000', // Indigo accent for the "category" text
-                  fontSize: 12, 
-                  fontWeight: 700, 
-                  textTransform: 'uppercase', 
-                  letterSpacing: '0.1em',
-                  mt: 2 
+                  color: 'rgba(255,255,255,0.3) !important', 
+                  textTransform: 'none',
+                  fontWeight: 600,
+                  backgroundColor: 'rgba(255,255,255,0.05)',
+                  px: 3,
+                  borderRadius: '12px'
                 }}
               >
+                Coming Soon
+              </Button>
+            </CardActions>
+          </Card>
+
+          <Card 
+            sx={{ 
+              flex: 1,
+              backgroundColor: '#1a1a1a', 
+              border: '1px solid rgba(255, 255, 255, 0.05)',
+              borderRadius: '2rem',
+              transition: 'all 0.4s ease',
+              '&:hover': {
+                transform: 'translateY(-10px)',
+                borderColor: 'rgba(255, 255, 255, 0.2)',
+                boxShadow: '0 20px 40px rgba(0,0,0,0.4)'
+              }
+            }}
+          >
+            <CardContent sx={{ p: 4 }}>
+              <Box mb={3}>
+                <Avatar src="/Tron.png" sx={{ width: 56, height: 56, border: '2px solid #222' }} />
+              </Box>
+
+              <Typography sx={{ color: 'rgba(255,255,255,0.5)', fontSize: 12, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.15em', mb: 1 }}>
                 Computing Systems
               </Typography>
-            <Typography 
-              variant="h5" 
-              component="div" 
-              sx={{ 
-                fontWeight: 800,           // Extra bold for impact
-                letterSpacing: '-0.02em',  // Tighter tracking for a modern feel
-                color: '#1a1a1a',          // Deep charcoal instead of pure black
-                fontFamily: '"Inter", "Roboto", sans-serif' 
-              }}
-            >
+              <Typography variant="h5" sx={{ color: '#ffffff', fontWeight: 800, mb: 2, tracking: '-0.02em' }}>
                 Tron Light Cycle Game
-            </Typography>
-            <Typography 
-              variant="body2" 
-              sx={{ 
-                mt: 1.5, 
-                color: '#4b5563',          // Tailwind-style Gray-600 for better hierarchy
-                lineHeight: 1.6,           // More breathing room between lines
-                fontSize: '0.95rem',
-                fontWeight: 400
-              }}
-            >
-                A game built in embedded C,
-                using timers and interrupts for real-time gameplay
-            </Typography>
-          </CardContent>
-          <CardActions>
-            <Button 
-              size="small" 
-              sx={{ color: '#000000' ,
+              </Typography>
+              <Typography sx={{ color: 'rgba(255,255,255,0.6)', lineHeight: 1.7, fontSize: '0.95rem' }}>
+                A retro game built in embedded C, utilizing hardware timers and interrupts for high-performance, real-time gameplay.
+              </Typography>
+            </CardContent>
+            <CardActions sx={{ p: 4, pt: 0 }}>
+              <Button 
+                href="https://github.com/ttrieu2025/Tron-light-cycle-game"
+                target="_blank"
+                size="medium" 
+                sx={{ 
+                  color: '#000000', 
+                  backgroundColor: '#ffffff',
+                  textTransform: 'none',
+                  fontWeight: 700,
+                  px: 4,
+                  borderRadius: '12px',
+                  '&:hover': {
+                    backgroundColor: 'rgba(255,255,255,0.8)',
+                  }
+                }}
+              >
+                Learn More
+              </Button>
+            </CardActions>
+          </Card>
 
-              '&:hover': {
-              backgroundColor: '#000000', // Changes background to black
-              color: '#ffffff'
-            }
-            }}
-
-              href="https://github.com/ttrieu2025/Tron-light-cycle-game"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="resume-btn"
-            >
-              Learn More
-            </Button>
-          </CardActions>
-        </Card>
-      </Stack>
+        </Stack>
+      </div>
     </div>
   );
 }
