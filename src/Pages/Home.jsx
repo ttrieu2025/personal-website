@@ -13,10 +13,10 @@ function Home() {
           <div className="flex flex-col gap-6 p-6 rounded-xl max-w-md w-full ">
             <div className="intro-text flex flex-col gap-4 text-white">
               <h2 className="font-bold text-3xl">Hi, I'm Trieu</h2>
-              <p className="text-lg leading-relaxed text-gray-300">
+              <a className="text-lg leading-relaxed text-gray-300">
                 I am a 2nd-year Electrical Engineering student at UBC,
                 focused on building a strong foundation in control and systems.
-              </p>
+              </a>
             </div>
 
             {/* Social links */}

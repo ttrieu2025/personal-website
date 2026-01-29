@@ -72,21 +72,55 @@ function Projects() {
               />
             </Stack>
             <Typography 
-              gutterBottom 
-              sx={{ color: '#000000', fontSize: 14, mt: 2 }}
+                gutterBottom 
+                sx={{ 
+                  color: '#000000', // Indigo accent for the "category" text
+                  fontSize: 12, 
+                  fontWeight: 700, 
+                  textTransform: 'uppercase', 
+                  letterSpacing: '0.1em',
+                  mt: 2 
+                }}
+              >
+                UBC Open Robotics
+              </Typography>
+            <Typography 
+              variant="h5" 
+              component="div" 
+              sx={{ 
+                fontWeight: 800,           // Extra bold for impact
+                letterSpacing: '-0.02em',  // Tighter tracking for a modern feel
+                color: '#1a1a1a',          // Deep charcoal instead of pure black
+                fontFamily: '"Inter", "Roboto", sans-serif' 
+              }}
             >
-              UBC Open Robotics Design Team
-            </Typography>
-            <Typography color = "#000000" variant="h5" component="div" font='bold'>
               Haptic Knob Project
             </Typography>
-            <Typography color = "#000000" variant="body2" sx={{ mt: 1 }}>
+            <Typography 
+              variant="body2" 
+              sx={{ 
+                mt: 1.5, 
+                color: '#4b5563',          // Tailwind-style Gray-600 for better hierarchy
+                lineHeight: 1.6,           // More breathing room between lines
+                fontSize: '0.95rem',
+                fontWeight: 400
+              }}
+            >
               BLDC-driven haptic feedback system <br />
               simulating electronic components (R, L, C, Diodes)
             </Typography>
           </CardContent>
           <CardActions>
-            <Button size="small" sx={{ color: '#b5b5b5' }}>
+            <Button 
+              size="small" 
+              sx={{ color: '#000000' ,
+
+              '&:hover': {
+              backgroundColor: '#000000', // Changes background to black
+              color: '#ffffff'
+            }
+            }}
+            >
               Coming Soon
             </Button>
           </CardActions>
@@ -125,23 +159,55 @@ function Projects() {
               />
             </Stack>
             <Typography 
-              gutterBottom 
-              sx={{ color: "#000000", fontSize: 14, mt: 2 }}
+                gutterBottom 
+                sx={{ 
+                  color: '#000000', // Indigo accent for the "category" text
+                  fontSize: 12, 
+                  fontWeight: 700, 
+                  textTransform: 'uppercase', 
+                  letterSpacing: '0.1em',
+                  mt: 2 
+                }}
+              >
+                Computing Systems
+              </Typography>
+            <Typography 
+              variant="h5" 
+              component="div" 
+              sx={{ 
+                fontWeight: 800,           // Extra bold for impact
+                letterSpacing: '-0.02em',  // Tighter tracking for a modern feel
+                color: '#1a1a1a',          // Deep charcoal instead of pure black
+                fontFamily: '"Inter", "Roboto", sans-serif' 
+              }}
             >
-              Computing Systems Project
+                Tron Light Cycle Game
             </Typography>
-            <Typography color = "#000000" variant="h5" component="div" font='bold'>
-              Tron Light Cycle Game
-            </Typography>
-            <Typography color = "#000000" variant="body2" sx={{ mt: 1 }}>
-              A game built in embedded C, <br />
-              using timers and interrupts for real-time gameplay
+            <Typography 
+              variant="body2" 
+              sx={{ 
+                mt: 1.5, 
+                color: '#4b5563',          // Tailwind-style Gray-600 for better hierarchy
+                lineHeight: 1.6,           // More breathing room between lines
+                fontSize: '0.95rem',
+                fontWeight: 400
+              }}
+            >
+                A game built in embedded C,
+                using timers and interrupts for real-time gameplay
             </Typography>
           </CardContent>
           <CardActions>
             <Button 
               size="small" 
-              sx={{ color: '#b5b5b5' }}
+              sx={{ color: '#000000' ,
+
+              '&:hover': {
+              backgroundColor: '#000000', // Changes background to black
+              color: '#ffffff'
+            }
+            }}
+
               href="https://github.com/ttrieu2025/Tron-light-cycle-game"
               target="_blank"
               rel="noopener noreferrer"
