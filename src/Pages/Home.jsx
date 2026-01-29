@@ -5,7 +5,7 @@ function Home() {
     /* 1. Main page wrapper - handles top margin and basic centering */
     <div className="flex justify-center mt-12 px-6">
       
-      <div className="p-10 max-w-12xl w-5xl border-[#b5b4b4] border rounded-2xl shadow-lg">
+      <div className="p-10 max-w-12xl w-5xl">
         
         <div className="intro flex flex-col md:flex-row gap-12 items-center">
           
@@ -22,19 +22,19 @@ function Home() {
             {/* Social links */}
             <div className="social-links flex gap-6 mt-2">
               <a href="mailto:cattrieutruongminh@gmail.com" target="_blank" rel="noopener noreferrer">
-                <FaEnvelope size={24} color="#b5b4b4" className="hover:text-white transition-colors" />
+                <FaEnvelope size={28} color="#ffffff" className="hover:text-white transition-colors" />
               </a>
               <a href="https://www.linkedin.com/in/mc-trieu-truong" target="_blank" rel="noopener noreferrer">
-                <FaLinkedin size={24} color="#b5b4b4" className="hover:text-white transition-colors" />
+                <FaLinkedin size={28} color="#ffffff" className="hover:text-white transition-colors" />
               </a>
               <a href="https://www.instagram.com/c.trevort_14/" target="_blank" rel="noopener noreferrer">
-                <FaInstagram size={24} color="#b5b4b4" className="hover:text-white transition-colors" />
+                <FaInstagram size={28} color="#ffffff" className="hover:text-white transition-colors" />
               </a>
               <a href="https://www.facebook.com/cattrieu.truongminh.3/" target="_blank" rel="noopener noreferrer">
-                <FaFacebook size={24} color="#b5b4b4" className="hover:text-white transition-colors" />
+                <FaFacebook size={28} color="#ffffff" className="hover:text-white transition-colors" />
               </a>
               <a href="https://github.com/ttrieu2025/" target="_blank" rel="noopener noreferrer">
-                <FaGithub size={24} color="#b5b4b4" className="hover:text-white transition-colors" />
+                <FaGithub size={28} color="#ffffff" className="hover:text-white transition-colors" />
               </a>
             </div>
           </div>

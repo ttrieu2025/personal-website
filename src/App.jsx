@@ -16,8 +16,8 @@ function App() {
   return (
     <>
       {/* HEADER */}
-      <header className="header z-10 shadow-md bg-white">
-        <div className="container mx-auto flex justify-between items-center p-4 border-b relative">
+      <header className="header z-10 shadow-md ">
+        <div className="container mx-auto flex justify-between items-center ">
 
           {/* Hamburger (Mobile only) */}
           <button
@@ -41,7 +41,7 @@ function App() {
               href="https://drive.google.com/file/d/1wW6WuvkttrJS7zTCpU7Q4jkoKqghzdFD/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-2 bg-black text-white rounded"
+              className="px-6 py-2 bg-black hover:text-white transition-colors"
             >
               Resume
             </a>
@@ -68,7 +68,7 @@ function App() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={closeMenu}
-                className="px-4 py-3 bg-black text-white text-center"
+                className="px-4 py-3  hover:text-white transition-colors"
               >
                 Resume
               </a>

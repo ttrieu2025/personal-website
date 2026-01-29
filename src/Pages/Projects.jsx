@@ -30,8 +30,7 @@ function Projects() {
           sx={{ 
             minWidth: { xs: '100%', sm: 300, md: 260 },
             maxWidth: { xs: '100%', sm: 400, md: 400 },
-            backgroundColor: '#171716',
-            color: '#ffffff',
+            color: '#b5b4b4',
             borderRadius: 3,
             
           }}
@@ -50,7 +49,6 @@ function Projects() {
                 sx={{ 
                   width: 50, 
                   height: 50, 
-                  border: '2px solid #ffffff', 
                   zIndex: 1 
                 }} 
               />
@@ -58,7 +56,7 @@ function Projects() {
                 sx={{ 
                   height: '2px', 
                   width: '40px', 
-                  backgroundColor: '#ffffff', 
+                  backgroundColor: '#b5b4b4', 
                   zIndex: 0 
                 }} 
               />
@@ -75,14 +73,14 @@ function Projects() {
             </Stack>
             <Typography 
               gutterBottom 
-              sx={{ color: '#b5b4b4', fontSize: 14, mt: 2 }}
+              sx={{ color: '#000000', fontSize: 14, mt: 2 }}
             >
               UBC Open Robotics Design Team
             </Typography>
-            <Typography variant="h5" component="div">
+            <Typography color = "#000000" variant="h5" component="div" font='bold'>
               Haptic Knob Project
             </Typography>
-            <Typography variant="body2" sx={{ mt: 1 }}>
+            <Typography color = "#000000" variant="body2" sx={{ mt: 1 }}>
               BLDC-driven haptic feedback system <br />
               simulating electronic components (R, L, C, Diodes)
             </Typography>
@@ -103,8 +101,7 @@ function Projects() {
           sx={{ 
             minWidth: { xs: '100%', sm: 300, md: 260 },
             maxWidth: { xs: '100%', sm: 400, md: 400 },
-            backgroundColor: '#171716',
-            color: '#ffffff',
+            color: '#b5b4b4',
             borderRadius: 3,
           }}
         >
@@ -129,14 +126,14 @@ function Projects() {
             </Stack>
             <Typography 
               gutterBottom 
-              sx={{ color: '#b5b4b4', fontSize: 14, mt: 2 }}
+              sx={{ color: "#000000", fontSize: 14, mt: 2 }}
             >
               Computing Systems Project
             </Typography>
-            <Typography variant="h5" component="div">
+            <Typography color = "#000000" variant="h5" component="div" font='bold'>
               Tron Light Cycle Game
             </Typography>
-            <Typography variant="body2" sx={{ mt: 1 }}>
+            <Typography color = "#000000" variant="body2" sx={{ mt: 1 }}>
               A game built in embedded C, <br />
               using timers and interrupts for real-time gameplay
             </Typography>
