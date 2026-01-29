@@ -33,6 +33,7 @@ function Projects() {
             backgroundColor: '#171716',
             color: '#ffffff',
             borderRadius: 3,
+            
           }}
         >
           <CardContent>
