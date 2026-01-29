@@ -15,7 +15,7 @@ function Home() {
             <h2 className="font-extrabold text-5xl tracking-tight leading-tight">
               Hi, I'm <span className="text-gray-400">Trieu</span>
             </h2>
-            <p className="text-lg md:text-xl leading-relaxed text-gray-400 font-medium">
+            <p className="text-lg md:text-base leading-relaxed text-gray-400">
               As an Electrical Engineering student at the University of British Columbia, 
               I am building a strong foundation in circuit theory, electromagnetics, and control systems.            </p>
           </div>
