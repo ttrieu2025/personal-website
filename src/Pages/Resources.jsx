@@ -104,7 +104,7 @@ function Resources() {
               </p>
             ) : (
               <p className="text-gray-500 text-sm italic opacity-70">
-                Note: If the PDF doesn't load, try refreshing or checking your browser's PDF settings.
+                  Note: If the PDF doesn't load, try refreshing or checking your browser's PDF settings.
               </p>
             )}
           </div>
