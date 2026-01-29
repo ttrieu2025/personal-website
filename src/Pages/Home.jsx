@@ -7,10 +7,10 @@ function Home() {
       
       <div className="p-10 max-w-12xl w-5xl">
         
-        <div className="intro flex flex-col md:flex-row gap-12 items-center">
+        <div className="intro flex flex-col  rounded-lg md:flex-row gap-12 items-center">
           
           {/* Left column: text + social icons */}
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-6 p-6 rounded-xl max-w-md w-full ">
             <div className="intro-text flex flex-col gap-4 text-white">
               <h2 className="font-bold text-3xl">Hi, I'm Trieu</h2>
               <p className="text-lg leading-relaxed text-gray-300">
@@ -20,7 +20,7 @@ function Home() {
             </div>
 
             {/* Social links */}
-            <div className="social-links flex gap-6 mt-2">
+           <div className="social-links flex gap-6 mt-2">
               <a href="mailto:cattrieutruongminh@gmail.com" target="_blank" rel="noopener noreferrer">
                 <FaEnvelope size={28} color="#ffffff" className="hover:text-white transition-colors" />
               </a>

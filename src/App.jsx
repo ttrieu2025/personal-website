@@ -85,10 +85,6 @@ function App() {
         <Route path="/projects" element={<Projects />} />
       </Routes>
 
-      {/* FOOTER */}
-      <footer className="footer text-center py-4">
-        <small>© 2026 Trieu Truong. All rights reserved.</small>
-      </footer>
     </>
   )
 }
