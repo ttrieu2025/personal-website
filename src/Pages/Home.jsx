@@ -17,7 +17,7 @@ function Home() {
             </h2>
             <p className="text-lg md:text-xl leading-relaxed text-gray-400 font-medium">
               I am a 2nd-year Electrical Engineering student at UBC,
-              focused on building a strong foundation in control and systems.
+              focused on building a strong foundation in circuit theory, electromagnetics and control systems.
             </p>
           </div>
 
