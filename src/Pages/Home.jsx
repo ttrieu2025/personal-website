@@ -16,9 +16,8 @@ function Home() {
               Hi, I'm <span className="text-gray-400">Trieu</span>
             </h2>
             <p className="text-lg md:text-xl leading-relaxed text-gray-400 font-medium">
-              I am a 2nd-year Electrical Engineering student at UBC,
-              focused on building a strong foundation in circuit theory, electromagnetics and control systems.
-            </p>
+              As an electrical Engineering student at the University of British Columbia, 
+              I am building a strong foundation in circuit theory, electromagnetics, and control systems.            </p>
           </div>
 
           {/* Social links */}
