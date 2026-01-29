@@ -43,7 +43,7 @@ function Projects() {
           >
             <CardContent sx={{ p: 4 }}>
               <Stack direction="row" spacing={0} alignItems="center" mb={3}>
-                <Avatar src="/Laplace.png" sx={{ width: 56, height: 56, border: '2px solid #222' }} />
+                <Avatar src="/Logo.png" sx={{ width: 56, height: 56, border: '2px solid #222' }} />
                 <Box sx={{ height: '2px', width: '30px', backgroundColor: 'rgba(255,255,255,0.1)' }} />
                 <Avatar src="/open-robotics.jpg" sx={{ width: 56, height: 56, border: '2px solid #222' }} />
               </Stack>
