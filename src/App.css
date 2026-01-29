@@ -16,7 +16,7 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
-  padding-top: 5rem;
+  padding-top: 1rem;  
 }
 
 /* Root for fonts, colors, CSS variables */
@@ -106,7 +106,6 @@ footer{
   align-items: center;     /* center items horizontally */
   min-height: 100vh;       /* take full screen height */
   text-align: center;      /* center inline content like email text */
-  margin-top: -3rem;
 }
 
 .centered-section {
