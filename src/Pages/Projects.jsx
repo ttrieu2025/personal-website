@@ -62,7 +62,7 @@ function Projects() {
                 Haptic Knob Project
               </Typography>
               <Typography sx={{ color: 'rgba(255,255,255,0.6)', lineHeight: 1.7, fontSize: '0.95rem' }}>
-                BLDC-driven haptic feedback system simulating electronic components such as resistors, inductors, capacitors and diodes
+                A BLDC-driven haptic feedback system simulating electronic components such as resistors, inductors, capacitors and diodes
               </Typography>
             </CardContent>
             <CardActions sx={{ p: 4, pt: 0 }}>
