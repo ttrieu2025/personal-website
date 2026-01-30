@@ -55,7 +55,7 @@ function Projects() {
                 Haptic Knob Project
               </Typography>
               <Typography sx={{ color: 'rgba(255,255,255,0.6)', lineHeight: 1.7, fontSize: '0.95rem' }}>
-                BLDC-driven haptic feedback system simulating electronic components such as Resistors, Inductors, and Diodes.
+                BLDC-driven haptic feedback system simulating electronic components such as resistors, inductors, capacitors and diodes
               </Typography>
             </CardContent>
             <CardActions sx={{ p: 4, pt: 0 }}>
@@ -102,7 +102,7 @@ function Projects() {
                 Tron Light Cycle Game
               </Typography>
               <Typography sx={{ color: 'rgba(255,255,255,0.6)', lineHeight: 1.7, fontSize: '0.95rem' }}>
-                A retro game built in embedded C, utilizing hardware timers and interrupts for high-performance, real-time gameplay.
+                A retro game built in embedded C, utilizing hardware timers and interrupts for high-performance and real-time gameplay
               </Typography>
             </CardContent>
             <CardActions sx={{ p: 4, pt: 0 }}>
