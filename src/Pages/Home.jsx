@@ -19,7 +19,7 @@ function Home() {
             </h2>
             <p className="text-lg md:text-base leading-relaxed text-gray-400">
               As an Electrical Engineering student at the University of British Columbia, 
-              I am building a strong foundation in circuit theory, electromagnetics, and control systems.            </p>
+              I am building a strong foundation in circuit theory, electromagnetics and control systems         </p>
           </div>
 
           {/* Social links */}
