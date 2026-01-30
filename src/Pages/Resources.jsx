@@ -38,7 +38,7 @@ function Resources() {
                 <button
                   key={item.id}
                   onClick={() => setCurrent(item)}
-                  className={`text-left px-4 py-2 rounded-xl transition-all duration-300 text-sm font-medium ${
+                  className={`flex flex-col px-4 py-2 rounded-xl transition-all duration-300 text-sm font-medium ${
                     current.id === item.id 
                     ? "bg-white text-black" 
                     : "text-gray-400 hover:text-white hover:bg-white/5"
@@ -54,7 +54,7 @@ function Resources() {
             <h3 className="text-white font-extrabold text-xs tracking-[0.2em] uppercase mb-4 opacity-50 ">
               Formula Sheets
             </h3>
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-2 items-center">
               {Formulasheetitems.map((item) => (
                 <button
                   key={item.id}

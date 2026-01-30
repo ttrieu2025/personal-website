@@ -14,9 +14,9 @@ function Projects() {
       <div className="bg-[#111111] border border-white/10 shadow-2xl rounded-[2.5rem] p-8 md:p-16 max-w-6xl w-full">
         
         <div className="mb-12">
-          <h2 className="text-white font-extrabold text-4xl tracking-tight mb-2">
+            <h2 className="text-white font-extrabold text-4xl tracking-tight mb-2">
             Featured Projects
-          </h2>
+            </h2>
           
           </div>
 
@@ -42,7 +42,14 @@ function Projects() {
             }}
           >
             <CardContent sx={{ p: 4 }}>
-              <Stack direction="row" spacing={0} alignItems="center" mb={3}>
+              <Stack
+                direction="row"
+                spacing={0}
+                alignItems="center"
+                justifyContent="center"   
+                mb={3}
+                sx={{ width: '100%' }} 
+              >
                 <Avatar src="/Logo.png" sx={{ width: 56, height: 56, border: '2px solid #222' }} />
                 <Box sx={{ height: '2px', width: '30px', backgroundColor: 'rgba(255,255,255,0.1)' }} />
                 <Avatar src="/open-robotics.jpg" sx={{ width: 56, height: 56, border: '2px solid #222' }} />
@@ -68,7 +75,8 @@ function Projects() {
                   fontWeight: 600,
                   backgroundColor: 'rgba(255,255,255,0.05)',
                   px: 3,
-                  borderRadius: '12px'
+                  borderRadius: '12px',
+                  mx: 'auto'
                 }}
               >
                 Coming Soon
@@ -91,8 +99,15 @@ function Projects() {
             }}
           >
             <CardContent sx={{ p: 4 }}>
-              <Box mb={3}>
-                <Avatar src="/Tron.png" sx={{ width: 56, height: 56, border: '2px solid #222' }} />
+              <Box 
+                mb={3} 
+                display="flex" 
+                justifyContent="center" 
+              >
+                <Avatar 
+                  src="/Tron.png" 
+                  sx={{ width: 56, height: 56, border: '2px solid #222' }} 
+                />
               </Box>
 
               <Typography sx={{ color: 'rgba(255,255,255,0.5)', fontSize: 12, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.15em', mb: 1 }}>
@@ -110,6 +125,7 @@ function Projects() {
                 href="https://github.com/ttrieu2025/Tron-light-cycle-game"
                 target="_blank"
                 size="medium" 
+                
                 sx={{ 
                   color: '#000000', 
                   backgroundColor: '#ffffff',
@@ -117,6 +133,7 @@ function Projects() {
                   fontWeight: 700,
                   px: 4,
                   borderRadius: '12px',
+                  mx: 'auto',  
                   '&:hover': {
                     backgroundColor: 'rgba(255,255,255,0.8)',
                   }
@@ -139,10 +156,17 @@ function Projects() {
                 boxShadow: '0 20px 40px rgba(0,0,0,0.4)'
               }
             }}
-          >
+                      >
             <CardContent sx={{ p: 4 }}>
-              <Box mb={3}>
-                <Avatar src="/Thermometer.jpg" sx={{ width: 56, height: 56, border: '2px solid #222' }} />
+              <Box 
+                mb={3} 
+                display="flex" 
+                justifyContent="center"  
+              >
+                <Avatar 
+                  src="/Thermometer.jpg" 
+                  sx={{ width: 56, height: 56, border: '2px solid #222' }} 
+                />
               </Box>
 
               <Typography sx={{ color: 'rgba(255,255,255,0.5)', fontSize: 12, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.15em', mb: 1 }}>
@@ -166,6 +190,7 @@ function Projects() {
                   fontWeight: 700,
                   px: 4,
                   borderRadius: '12px',
+                  mx: 'auto',  
                   '&:hover': {
                     backgroundColor: 'rgba(255,255,255,0.8)',
                   }
