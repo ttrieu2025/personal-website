@@ -156,6 +156,7 @@ function Projects() {
             </CardContent>
             <CardActions sx={{ p: 4, pt: 0 }}>
               <Button 
+                href="https://github.com/ttrieu2025/digital-thermometer.git"
                 target="_blank"
                 size="medium" 
                 sx={{ 
