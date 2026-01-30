@@ -152,7 +152,7 @@ function Projects() {
               Digital Thermometer
               </Typography>
               <Typography sx={{ color: 'rgba(255,255,255,0.6)', lineHeight: 1.7, fontSize: '0.95rem' }}>
-              A digital thermometer system built using the N76E003 microcontroller and an LM335 temperature sensor, featuring real-time Python-based data visualization.              </Typography>
+              A digital thermometer system built using the N76E003 microcontroller and LM335 temperature sensor with Python-based stripchart</Typography>
             </CardContent>
             <CardActions sx={{ p: 4, pt: 0 }}>
               <Button 

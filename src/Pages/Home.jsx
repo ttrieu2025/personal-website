@@ -1,5 +1,7 @@
 import React from 'react';
 import { FaLinkedin, FaInstagram, FaFacebook, FaGithub, FaEnvelope } from 'react-icons/fa';
+import Button from '@mui/material/Button';
+import { Link } from "react-router-dom";
 
 function Home() {
   return (
@@ -38,6 +40,24 @@ function Home() {
               <FaGithub size={26} className="text-white hover:text-gray-400 transition-colors" />
             </a>
           </div>
+                <Button 
+                component={Link}
+                to="/projects"
+                size="medium" 
+                sx={{ 
+                  color: '#000000', 
+                  backgroundColor: '#ffffff',
+                  textTransform: 'none',
+                  fontWeight: 700,
+                  px: 4,
+                  borderRadius: '12px',
+                  '&:hover': {
+                    backgroundColor: 'rgba(255,255,255,0.8)',
+                  }
+                }}
+              >
+                VIEW MY WORK
+              </Button>
         </div>
 
         {/* Right column: image */}
