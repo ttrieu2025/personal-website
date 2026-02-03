@@ -6,6 +6,8 @@ import { Menu, X } from 'lucide-react'
 import Home from './Pages/Home'
 import Resources from './Pages/Resources'
 import Projects from './Pages/Projects'
+import About from './Pages/About'
+
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -44,6 +46,17 @@ function App() {
               {isActive('/') && <span className="absolute bottom-0 left-0 w-full h-0.5 bg-white rounded-full"></span>}
             </Link>
 
+            
+            <Link 
+              to="/about" 
+              className={`text-sm font-semibold tracking-wide transition-all duration-300 relative py-2
+                ${isActive('/about') ? 'text-white' : 'text-gray-500 hover:text-gray-300'}
+              `}
+            >
+              About
+              {isActive('/about') && <span className="absolute bottom-0 left-0 w-full h-0.5 bg-white rounded-full"></span>}
+            </Link>
+
             <Link 
               to="/resources" 
               className={`text-sm font-semibold tracking-wide transition-all duration-300 relative py-2
@@ -63,6 +76,8 @@ function App() {
               Projects
               {isActive('/projects') && <span className="absolute bottom-0 left-0 w-full h-0.5 bg-white rounded-full"></span>}
             </Link>
+
+
           </nav>
 
           {/* 3. Desktop Resume Button (Right side) */}
@@ -87,13 +102,15 @@ function App() {
               <Link to="/" onClick={closeMenu} className={`text-xl font-bold ${isActive('/') ? 'text-white' : 'text-gray-600'}`}>
                 Home
               </Link>
+              <Link to="/about" onClick={closeMenu} className={`text-xl font-bold ${isActive('/about') ? 'text-white' : 'text-gray-600'}`}>
+                About
+              </Link>
               <Link to="/resources" onClick={closeMenu} className={`text-xl font-bold ${isActive('/resources') ? 'text-white' : 'text-gray-600'}`}>
                 Resources
               </Link>
               <Link to="/projects" onClick={closeMenu} className={`text-xl font-bold ${isActive('/projects') ? 'text-white' : 'text-gray-600'}`}>
                 Projects
-              </Link>
-              <a
+              </Link>              <a
                 href="https://drive.google.com/file/d/1wW6WuvkttrJS7zTCpU7Q4jkoKqghzdFD/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -112,6 +129,7 @@ function App() {
       <main className="pt-20">
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
           <Route path="/resources" element={<Resources />} />
           <Route path="/projects" element={<Projects />} />
         </Routes>
