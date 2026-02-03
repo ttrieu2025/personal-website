@@ -41,8 +41,7 @@ function About() {
             My engineering journey started with a desire to create practical solutions that could help my family and community solve daily-life problems. Inspired from that, I am passionate about turning theoretical concepts into real-world applications through hands-on projects and teamwork.
             </p>
             <p className="text-lg md:text-base leading-relaxed text-gray-400 text-left">
-
-            Outside of academics, I enjoy listening to music, playing the piano, and composing my own songs. These creative pursuits help me maintain balance in my life and encourage creativity.</p>
+            Outside of academics, I enjoy listening to music, playing the piano, and composing my own songs. These creative pursuits help me maintain balance in my life and enjoy the process of creating something new.</p>
           </div>
 
           {/* Skills tags */}
