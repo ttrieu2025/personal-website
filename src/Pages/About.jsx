@@ -15,7 +15,7 @@ import 'swiper/css/effect-fade';
 function About() {
   const profileImages = [
     "/me.jpg",
-    "/trip.jpg", 
+    "/me1.jpg", 
   ];
 
   const skills = [
@@ -83,14 +83,14 @@ function About() {
           >
             {profileImages.map((imgSrc, index) => (
               <SwiperSlide key={index}>
-                <div className="relative aspect-[4/5] w-full">
+                <div className="relative aspect-4/5 w-full">
                   <img 
                     src={imgSrc} 
                     alt={`Slide ${index}`} 
                     className="w-full h-full object-cover"
                   />
                   {/* Subtle overlay to help text/pagination pop */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />
+                  <div className="absolute inset-0 bg-linear-to-t from-black/20 to-transparent pointer-events-none" />
                 </div>
               </SwiperSlide>
             ))}
