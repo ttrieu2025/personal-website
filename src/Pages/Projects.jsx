@@ -122,7 +122,7 @@ function Projects() {
             </CardContent>
             <CardActions sx={{ p: 4, pt: 0 }}>
               <Button 
-                href="https://github.com/ttrieu2025/Tron-light-cycle-game"
+                href="https://github.com/ttrieu2025/tron-light-cycle-game"
                 target="_blank"
                 size="medium" 
                 
