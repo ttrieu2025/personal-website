@@ -116,13 +116,27 @@ function About() {
             }}
           >
             <AccordionSummary
-              expandIcon={<ExpandMoreIcon sx={{ color: 'white' }} />}
-              sx={{ 
-                padding: '1rem 2rem',
-                '&:hover': { backgroundColor: 'rgba(255,255,255,0.02)' }, 
-                '& .MuiTouchRipple-root': { display: 'none' },
-              }}
-            >
+           expandIcon={<ExpandMoreIcon />}
+            sx={{
+              padding: '1rem 2rem',
+              '&:hover': {
+                backgroundColor: 'rgba(255,255,255,0.02)'
+              },
+              '& .MuiTouchRipple-root': {
+                display: 'none'
+              },
+              '& .MuiButtonBase-root': {
+                border: 'none',
+                outline: 'none',
+              },
+              '&:focus': {
+                outline: 'none',
+              },
+              '&:focus-visible': {
+                outline: 'none',
+              },
+            }}
+          >
               <div className="flex flex-col md:flex-row justify-between w-full pr-4 md:items-center gap-2">
                 <span className="font-bold text-lg text-gray-200">IT/AV Support Student Rover | UBC Sauder School of Business</span>
                 <span className="text-gray-500 font-medium text-sm whitespace-nowrap">Jan. 2026 - Present</span>
@@ -137,25 +151,43 @@ function About() {
           </Accordion>
 
           {/* Accordion 2: Open Robotics */}
-          <Accordion 
-            sx={{ 
-              backgroundColor: '#111111', 
-              color: 'white', 
-              border: '1px solid rgba(255,255,255,0.1)',
-              borderRadius: '1.5rem !important',
-              '&:before': { display: 'none' },
-              backgroundImage: 'none',
-              overflow: 'hidden'
-            }}
-          >
-            <AccordionSummary
-              expandIcon={<ExpandMoreIcon sx={{ color: 'white' }} />}
+            <Accordion 
               sx={{ 
-                padding: '1rem 2rem',
-                '&:hover': { backgroundColor: 'rgba(255,255,255,0.02)' },
-                '& .MuiTouchRipple-root': { display: 'none' },
+                backgroundColor: '#111111', 
+                color: 'white', 
+                border: '1px solid rgba(255,255,255,0.1)', // This is your subtle main border
+                borderRadius: '1.5rem !important',
+                boxShadow: 'none', // Remove default shadow
+                '&:before': { display: 'none' }, // Hides the default Mui top-border/divider
+                '&:not(:last-child)': {
+                  borderBottom: '1px solid rgba(255,255,255,0.1)', // Keeps only your custom border
+                },
+                backgroundImage: 'none',
+                overflow: 'hidden'
               }}
             >
+            <AccordionSummary
+            expandIcon={<ExpandMoreIcon />}
+            sx={{
+              padding: '1rem 2rem',
+              '&:hover': {
+                backgroundColor: 'rgba(255,255,255,0.02)'
+              },
+              '& .MuiTouchRipple-root': {
+                display: 'none'
+              },
+              '& .MuiButtonBase-root': {
+                border: 'none',
+                outline: 'none',
+              },
+              '&:focus': {
+                outline: 'none',
+              },
+              '&:focus-visible': {
+                outline: 'none',
+              },
+            }}
+          >
               <div className="flex flex-col md:flex-row justify-between w-full pr-4 md:items-center gap-2">
                 <span className="font-bold text-lg text-gray-200">Hardware Team Member | UBC Open Robotics</span>
                 <span className="text-gray-500 font-medium text-sm whitespace-nowrap">Sept. 2025 - Present</span>
