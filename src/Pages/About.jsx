@@ -29,13 +29,13 @@ function About() {
       {/* --- Intro Card --- */}
       <div className="intro flex flex-col md:flex-row items-center gap-12 
                       bg-[#111111] border border-white/10 shadow-2xl 
-                      rounded-[2.5rem] p-8 md:p-16 w-full ">
+                      rounded-[2.5rem] p-8 md:p-16 w-full">
         
         {/* Left Side: Content */}
         <div className="flex flex-col gap-8 flex-1">
-          <div className="intro-text flex flex-col gap-4 text-white ">
-            <h2 className="font-extrabold text-5xl tracking-tight leading-tight ">
-              About <span className="text-gray-400 ">Me</span>
+          <div className="intro-text flex flex-col gap-4 text-white">
+            <h2 className="font-extrabold text-5xl tracking-tight leading-tight">
+              About <span className="text-gray-400">Me</span>
             </h2>
             <p className="text-lg md:text-base leading-relaxed text-gray-400 text-left">
             My engineering journey started with a desire to create practical solutions that could help my family and community solve daily-life problems. Inspired from that, I am passionate about turning theoretical concepts into real-world applications through hands-on projects and teamwork.
@@ -57,46 +57,44 @@ function About() {
           </div>
         </div>
 
-{/* Right Side: Image Swiper Container */}
-<div className="intro-image w-full md:w-1/3 flex justify-center items-center group">
-  <div className="w-full max-w-3xl"> {/* Control the actual "small" width here */}
-    <Swiper
-      modules={[Autoplay, Pagination, EffectFade]}
-      spaceBetween={0}
-      slidesPerView={1}
-      effect={'fade'}
-      loop={true}
-      autoplay={{ 
-        delay: 3500, 
-        disableOnInteraction: false 
-      }}
-      pagination={{ 
-        clickable: true,
-        dynamicBullets: true 
-      }}
-      className="rounded-3xl shadow-2xl overflow-hidden border border-white/5"
-      style={{
-        "--swiper-pagination-color": "#ffffff",
-        "--swiper-pagination-bullet-inactive-color": "#4b5563",
-        "--swiper-pagination-bullet-inactive-opacity": "0.5",
-        "--swiper-pagination-bullet-size": "8px",
-      }}
-    >
-      {profileImages.map((imgSrc, index) => (
-        <SwiperSlide key={index}>
-          {/* Centering the image inside the slide */}
-          <div className="relative aspect-4/5 w-full overflow-hidden flex justify-center items-center bg-[#111111]">
-            <img 
-              src={imgSrc} 
-              alt={`Slide ${index}`} 
-              className="w-full h-full object-cover" 
-            />
-            <div className="absolute inset-0 bg-linear-to-t from-black/20 to-transparent pointer-events-none" />
-          </div>
-        </SwiperSlide>
-      ))}
-    </Swiper>
-  </div>
+        {/* Right Side: Image Swiper */}
+        <div className="intro-image w-full max-w-[320px] group">
+          <Swiper
+            modules={[Autoplay, Pagination, EffectFade]}
+            spaceBetween={0}
+            slidesPerView={1}
+            effect={'fade'} // Smooth transition
+            loop={true}
+            autoplay={{ 
+              delay: 3500, 
+              disableOnInteraction: false 
+            }}
+            pagination={{ 
+              clickable: true,
+              dynamicBullets: true 
+            }}
+            className="rounded-2xl shadow-2xl overflow-hidden border border-white/5"
+            style={{
+              "--swiper-pagination-color": "#ffffff",
+              "--swiper-pagination-bullet-inactive-color": "#4b5563",
+              "--swiper-pagination-bullet-inactive-opacity": "0.5",
+              "--swiper-pagination-bullet-size": "8px",
+            }}
+          >
+            {profileImages.map((imgSrc, index) => (
+              <SwiperSlide key={index}>
+                <div className="relative aspect-4/5 w-full">
+                  <img 
+                    src={imgSrc} 
+                    alt={`Slide ${index}`} 
+                    className="w-full h-full object-cover"
+                  />
+                  {/* Subtle overlay to help text/pagination pop */}
+                  <div className="absolute inset-0 bg-linear-to-t from-black/20 to-transparent pointer-events-none" />
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
       </div>
 
