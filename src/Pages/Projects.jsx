@@ -104,9 +104,9 @@ function Projects() {
                 mb={3}
                 sx={{ width: '100%' }} 
               >
-                <Avatar src="/Logo.png" sx={{ width: 56, height: 56, border: '2px solid #222' }} />
-                <Box sx={{ height: '2px', width: '30px', backgroundColor: 'rgba(255,255,255,0.1)' }} />
-                <Avatar src="/open-robotics.jpg" sx={{ width: 56, height: 56, border: '2px solid #222' }} />
+                <Avatar src="/Knob.png" sx={{ width: 56, height: 56, border: '2px solid #222' }} />
+                {/* <Box sx={{ height: '2px', width: '30px', backgroundColor: 'rgba(255,255,255,0.1)' }} /> */}
+                {/* <Avatar src="/open-robotics.jpg" sx={{ width: 56, height: 56, border: '2px solid #222' }} /> */}
               </Stack>
 
               <Typography sx={{ color: 'rgba(255,255,255,0.5)', fontSize: 12, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.15em', mb: 1 }}>
