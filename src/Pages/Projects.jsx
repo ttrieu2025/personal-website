@@ -20,16 +20,70 @@ function Projects() {
           
           </div>
 
-        <Stack 
-          direction={{ xs: 'column', md: 'row' }}
-          spacing={4}
-          justifyContent="flex-start"
-          alignItems="stretch"
-        >
+          <Stack
+            direction="row"
+            spacing={4}
+            useFlexGap
+            sx={{ flexWrap: 'wrap' }}
+          >
 
           <Card 
             sx={{ 
-              flex: 1,
+              width: { xs: '100%', md: '30%' },
+              backgroundColor: '#1a1a1a', 
+              border: '1px solid rgba(255, 255, 255, 0.05)',
+              borderRadius: '2rem',
+              transition: 'all 0.4s ease',
+              '&:hover': {
+                transform: 'translateY(-10px)',
+                borderColor: 'rgba(255, 255, 255, 0.2)',
+                boxShadow: '0 20px 40px rgba(0,0,0,0.4)'
+              }
+            }}
+          >
+            <CardContent sx={{ p: 4 }}>
+              <Box 
+                mb={3} 
+                display="flex" 
+                justifyContent="center" 
+              >
+                <Avatar 
+                  src="/Oven.png" 
+                  sx={{ width: 56, height: 56, border: '2px solid #222' }} 
+                />
+              </Box>
+
+              <Typography sx={{ color: 'rgba(255,255,255,0.5)', fontSize: 12, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.15em', mb: 1 }}>
+                Design Studio
+              </Typography>
+              <Typography variant="h5" sx={{ color: '#ffffff', fontWeight: 800, mb: 2, tracking: '-0.02em' }}>
+                Reflow Oven Controller
+              </Typography>
+              <Typography sx={{ color: 'rgba(255,255,255,0.6)', lineHeight: 1.7, fontSize: '0.95rem' }}>
+               A finite state machine with hardware timers and interrupt-driven control to execute reflow curves with LCD monitoring</Typography>
+            </CardContent>
+            <CardActions sx={{ p: 4, pt: 0 }}>
+              <Button 
+                disabled
+                size="medium" 
+                sx={{ 
+                  color: 'rgba(255,255,255,0.3) !important', 
+                  textTransform: 'none',
+                  fontWeight: 600,
+                  backgroundColor: 'rgba(255,255,255,0.05)',
+                  px: 3,
+                  borderRadius: '12px',
+                  mx: 'auto'
+                }}
+              >
+                Coming Soon
+              </Button>
+            </CardActions>
+          </Card>
+
+          <Card 
+            sx={{ 
+              width: { xs: '100%', md: '30%' },
               backgroundColor: '#1a1a1a', 
               border: '1px solid rgba(255, 255, 255, 0.05)',
               borderRadius: '2rem',
@@ -59,7 +113,7 @@ function Projects() {
                 UBC Open Robotics
               </Typography>
               <Typography variant="h5" sx={{ color: '#ffffff', fontWeight: 800, mb: 2, tracking: '-0.02em' }}>
-                Haptic Knob Project
+                Haptic Knob <br/> Project
               </Typography>
               <Typography sx={{ color: 'rgba(255,255,255,0.6)', lineHeight: 1.7, fontSize: '0.95rem' }}>
                 A BLDC-driven haptic feedback system simulating electronic components such as resistors, inductors, capacitors and diodes
@@ -86,7 +140,7 @@ function Projects() {
 
           <Card 
             sx={{ 
-              flex: 1,
+              width: { xs: '100%', md: '30%' },
               backgroundColor: '#1a1a1a', 
               border: '1px solid rgba(255, 255, 255, 0.05)',
               borderRadius: '2rem',
@@ -145,7 +199,7 @@ function Projects() {
           </Card>
           <Card 
             sx={{ 
-              flex: 1,
+              width: { xs: '100%', md: '30%' },
               backgroundColor: '#1a1a1a', 
               border: '1px solid rgba(255, 255, 255, 0.05)',
               borderRadius: '2rem',
@@ -202,10 +256,10 @@ function Projects() {
           </Card>
 
 
-
-
-
         </Stack>
+
+        
+
       </div>
     </div>
   );
