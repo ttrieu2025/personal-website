@@ -30,14 +30,14 @@ function Home() {
             <a href="https://www.linkedin.com/in/mc-trieu-truong" target="_blank" rel="noopener noreferrer" className="transition-transform hover:scale-110">
               <FaLinkedin size={26} className="text-white hover:text-gray-400 transition-colors" />
             </a>
-            <a href="https://www.instagram.com/c.trevort_14/" target="_blank" rel="noopener noreferrer" className="transition-transform hover:scale-110">
+            <a href="https://github.com/ttrieu2025/" target="_blank" rel="noopener noreferrer" className="transition-transform hover:scale-110">
+              <FaGithub size={26} className="text-white hover:text-gray-400 transition-colors" />
+            </a>
+                        <a href="https://www.instagram.com/c.trevort_14/" target="_blank" rel="noopener noreferrer" className="transition-transform hover:scale-110">
               <FaInstagram size={26} className="text-white hover:text-gray-400 transition-colors" />
             </a>
             <a href="https://www.facebook.com/cattrieu.truongminh.3/" target="_blank" rel="noopener noreferrer" className="transition-transform hover:scale-110">
               <FaFacebook size={26} className="text-white hover:text-gray-400 transition-colors" />
-            </a>
-            <a href="https://github.com/ttrieu2025/" target="_blank" rel="noopener noreferrer" className="transition-transform hover:scale-110">
-              <FaGithub size={26} className="text-white hover:text-gray-400 transition-colors" />
             </a>
           </div>
                 <Button 
