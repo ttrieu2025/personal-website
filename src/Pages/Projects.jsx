@@ -159,7 +159,7 @@ function Projects() {
                 justifyContent="center"  
               >
                 <Avatar 
-                  src="/Timer-555 .jpg" 
+                  src="/Timer-555.jpg" 
                   sx={{ width: 56, height: 56, border: '2px solid #222' }} 
                 />
               </Box>
