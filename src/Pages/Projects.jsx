@@ -121,19 +121,23 @@ function Projects() {
             </CardContent>
             <CardActions sx={{ p: 4, pt: 0 }}>
               <Button 
-                disabled
+                href="https://github.com/Haptic-Knob-by-Open-Robotics/Haptic-Knob.git"
+                target="_blank"
                 size="medium" 
                 sx={{ 
-                  color: 'rgba(255,255,255,0.3) !important', 
+                  color: '#000000', 
+                  backgroundColor: '#ffffff',
                   textTransform: 'none',
-                  fontWeight: 600,
-                  backgroundColor: 'rgba(255,255,255,0.05)',
-                  px: 3,
+                  fontWeight: 700,
+                  px: 4,
                   borderRadius: '12px',
-                  mx: 'auto'
+                  mx: 'auto',  
+                  '&:hover': {
+                    backgroundColor: 'rgba(255,255,255,0.8)',
+                  }
                 }}
               >
-                Coming Soon
+                Learn More
               </Button>
             </CardActions>
           </Card>
