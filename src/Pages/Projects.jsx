@@ -175,7 +175,7 @@ function Projects() {
               LC Meter <br/> with Timer 555
               </Typography>
               <Typography sx={{ color: 'rgba(255,255,255,0.6)', lineHeight: 1.7, fontSize: '0.95rem' }}>
-               A frequency-based measurement tool that determines capacitance or inductance by converting them into an oscillation frequency.</Typography>
+               A measurement tool that determines capacitance or inductance by converting them into an oscillation frequency.</Typography>
             </CardContent>
             <CardActions sx={{ p: 4, pt: 0 }}>
               <Button 
