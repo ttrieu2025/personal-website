@@ -8,7 +8,7 @@ const Insightitems = [
   },
   {
     id: 2,
-    title: "Notes on Maxwell's Equations",
+    title: "Maxwell's Equations in Physics",
     pdf: "./Maxwell.pdf",
   },
 ];
