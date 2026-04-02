@@ -27,6 +27,61 @@ function Projects() {
             sx={{ flexWrap: 'wrap' }}
           >
 
+                      <Card 
+            sx={{ 
+              width: { xs: '100%', md: '30%' },
+              backgroundColor: '#1a1a1a', 
+              border: '1px solid rgba(255, 255, 255, 0.05)',
+              borderRadius: '2rem',
+              transition: 'all 0.4s ease',
+              '&:hover': {
+                transform: 'translateY(-10px)',
+                borderColor: 'rgba(255, 255, 255, 0.2)',
+                boxShadow: '0 20px 40px rgba(0,0,0,0.4)'
+              }
+            }}
+          >
+            <CardContent sx={{ p: 4 }}>
+              <Box 
+                mb={3} 
+                display="flex" 
+                justifyContent="center" 
+              >
+                <Avatar 
+                  src="/tracking-field-robot.png" 
+                  sx={{ width: 56, height: 56, border: '2px solid #222' }} 
+                />
+              </Box>
+
+              <Typography sx={{ color: 'rgba(255,255,255,0.5)', fontSize: 12, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.15em', mb: 1 }}>
+                Design Studio
+              </Typography>
+              <Typography variant="h5" sx={{ color: '#ffffff', fontWeight: 800, mb: 2, tracking: '-0.02em' }}>
+                Field Tracking <br/> Robot
+              </Typography>
+              <Typography sx={{ color: 'rgba(255,255,255,0.6)', lineHeight: 1.7, fontSize: '0.95rem' }}>
+               A field detector robot with remote control flowing the paths by using time-varying electromagnetic principles</Typography>
+            </CardContent>
+            <CardActions sx={{ p: 4, pt: 0 }}>
+              <Button 
+                disabled
+                target="_blank"
+                size="medium" 
+                sx={{ 
+                  color: '#000000', 
+                  backgroundColor: '#808080',
+                  textTransform: 'none',
+                  fontWeight: 700,
+                  px: 4,
+                  borderRadius: '12px',
+                  mx: 'auto',  
+                }}
+              >
+                Coming soon
+              </Button>
+            </CardActions>
+          </Card>
+
           <Card 
             sx={{ 
               width: { xs: '100%', md: '30%' },
