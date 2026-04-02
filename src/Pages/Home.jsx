@@ -7,7 +7,7 @@ function Home() {
   return (
     <>
       {/* INTRO SECTION */}
-      <div className="flex justify-center items-center min-h-[80vh] mt-12 px-6">
+      <div className="flex justify-center items-center min-h-[80vh] px-6">
         <div className="intro flex flex-col md:flex-row items-center gap-12 
                         bg-[#111111] border border-white/10 shadow-2xl 
                         rounded-[2.5rem] p-8 md:p-16 max-w-5xl w-full">
@@ -83,24 +83,53 @@ function Home() {
 
         </div> {/* END INTRO */}
       </div>   {/* END INTRO WRAPPER */}
+{/* Gradient Arrow pointing down */}
+<div className="flex justify-center">
+  <div className="w-12 h-12">
+    <svg viewBox="0 0 24 24" className="w-full h-full animate-bounce">
+      <defs>
+        <linearGradient id="arrowGradient" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="#ffffff" />
+          <stop offset="100%" stopColor="#888888" />
+        </linearGradient>
+      </defs>
+      <path
+        d="M12 4v16m0 0l-6-6m6 6l6-6"
+        stroke="url(#arrowGradient)"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        fill="none"
+      />
+    </svg>
+  </div>
+</div>
 
+<div className="w-full flex justify-center mt-12 px-6">
+  <div className="bg-[#111111] border border-white/10 shadow-2xl rounded-[2rem] p-8 md:p-12 max-w-5xl w-full">
 
-      {/* NEW VIDEO WRAPPER (separate, below intro) */}
-      <div className="w-full flex justify-center mt-20 px-6">
-        <div className="bg-[#111111] border border-white/10 shadow-2xl rounded-[2rem] p-8 md:p-12 max-w-5xl w-full">
-          {/* <h2 className="text-white text-3xl font-bold mb-6">  Recent</h2> */}
+    {/* Wrap title in its own div */}
+    <div className="mb-8 text-center">
+      <h2 className="text-white text-3xl md:text-4xl font-extrabold">
+        Highlighted Project
+      </h2>
+    </div>
 
-          <div className="aspect-video w-full rounded-2xl overflow-hidden border border-white/20 shadow-lg">
-            <iframe
-              className="w-full h-full"
-              src="https://www.youtube.com/watch?v=zQPqsqj1WKY"
-              title="Reflow Oven Controller Project"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            />
-          </div>
-        </div>
-      </div>
+    
+
+    {/* Video Container */}
+    <div className="aspect-video w-full rounded-2xl overflow-hidden border border-white/20 shadow-lg">
+      <iframe
+        className="w-full h-full"
+        src="https://www.youtube.com/embed/zQPqsqj1WKY"
+        title="Reflow Oven Controller Project Demo"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+      />
+    </div>
+
+  </div>
+</div>
     </>
   );
 }
