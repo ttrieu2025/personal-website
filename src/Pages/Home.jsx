@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaLinkedin, FaInstagram, FaFacebook, FaGithub, FaEnvelope } from 'react-icons/fa';
+import { FaLinkedin, FaInstagram, FaGithub, FaEnvelope, FaSpotify } from 'react-icons/fa';
 import Button from '@mui/material/Button';
 import { Link } from "react-router-dom";
 
@@ -38,8 +38,8 @@ function Home() {
               <a href="https://www.instagram.com/c.trevort_14/" target="_blank" rel="noopener noreferrer" className="transition-transform hover:scale-110">
                 <FaInstagram size={26} className="text-white hover:text-gray-400 transition-colors" />
               </a>
-              <a href="https://www.facebook.com/cattrieu.truongminh.3/" target="_blank" rel="noopener noreferrer" className="transition-transform hover:scale-110">
-                <FaFacebook size={26} className="text-white hover:text-gray-400 transition-colors" />
+              <a href="https://open.spotify.com/user/314hwlmaom6snyde4jrd2o5h3ski?si=56d50ce5f96d4df7" target="_blank" rel="noopener noreferrer" className="transition-transform hover:scale-110">
+                <FaSpotify size={26} className="text-white hover:text-gray-400 transition-colors" />
               </a>
             </div>
 
