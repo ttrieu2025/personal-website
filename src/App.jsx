@@ -126,7 +126,7 @@ function App() {
       </header>
 
       {/* ROUTES */}
-      <main className="pt-24">
+      <main className="pt-28">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
