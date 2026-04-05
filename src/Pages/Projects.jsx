@@ -64,12 +64,12 @@ function Projects() {
             </CardContent>
             <CardActions sx={{ p: 4, pt: 0 }}>
               <Button 
-                disabled
+                href="https://github.com/ELEC-291-2026/Project2.0"
                 target="_blank"
                 size="medium" 
                 sx={{ 
                   color: '#000000', 
-                  backgroundColor: '#808080',
+                  backgroundColor: '#ffffff',
                   textTransform: 'none',
                   fontWeight: 700,
                   px: 4,
@@ -77,7 +77,7 @@ function Projects() {
                   mx: 'auto',  
                 }}
               >
-                Coming soon
+                Learn More
               </Button>
             </CardActions>
           </Card>
