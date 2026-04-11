@@ -118,16 +118,25 @@ function Home() {
     
 
     {/* Video Container */}
-    <div className="aspect-video w-full rounded-2xl overflow-hidden border border-white/20 shadow-lg">
+    <div className="aspect-video w-full rounded-2xl overflow-hidden border border-white/20 shadow-lg p-8 mt-12">
       <iframe
         className="w-full h-full"
         src="https://www.youtube.com/embed/zQPqsqj1WKY"
-        title="Reflow Oven Controller Project Demo"
+        title="Reflow Oven Controller Project"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
       />
     </div>
 
+    <div className="aspect-video w-full rounded-2xl overflow-hidden border border-white/20 shadow-lg mt-8">
+      <iframe
+        className="w-full h-full"
+        src="https://www.youtube.com/embed/U5jY5kz8_YE"
+        title="Tracking Field Robot Project"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+      />
+    </div>
   </div>
 </div>
     </>
