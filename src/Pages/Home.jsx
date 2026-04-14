@@ -4,6 +4,20 @@ import Button from '@mui/material/Button';
 import { Link } from "react-router-dom";
 
 function Home() {
+  const highlightedProjects = [
+    {
+      title: "Tracking Field Robot",
+      description: "Autonomous motion, sensing, and real-world testing in a mobile robotics workflow.",
+      src: "https://www.youtube.com/embed/U5jY5kz8_YE"
+    },
+    {
+      title: "Reflow Oven Controller",
+      description: "Embedded controls, hardware integration, and closed-loop temperature tuning.",
+      src: "https://www.youtube.com/embed/zQPqsqj1WKY"
+    }
+
+  ];
+
   return (
     <>
       {/* INTRO SECTION */}
@@ -14,7 +28,15 @@ function Home() {
 
           {/* Left column: text + social icons */}
           <div className="flex flex-col gap-8 flex-1">
-            <div className="intro-text flex flex-col gap-4 text-white">
+            <div className="intro-text flex flex-col gap-4 text-white display">
+              <div className="flex flex-wrap gap-3">
+                <span className="inline-flex items-center rounded-full border border-white/15 bg-white/5 px-4 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-gray-300">
+                  Electrical Engineering
+                </span>
+                <span className="inline-flex items-center rounded-full border border-white/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-gray-500">
+                  UBC
+                </span>
+              </div>
               <h2 className="font-extrabold text-5xl tracking-tight leading-tight">
                 Hi, I'm <span className="text-gray-400">Trieu</span>
               </h2>
@@ -43,24 +65,33 @@ function Home() {
               </a>
             </div>
 
-            <Button
-              component={Link}
-              to="/projects"
-              size="medium"
-              sx={{
-                color: '#000000',
-                backgroundColor: '#ffffff',
-                textTransform: 'none',
-                fontWeight: 700,
-                px: 4,
-                borderRadius: '12px',
-                '&:hover': {
-                  backgroundColor: 'rgba(255,255,255,0.8)',
-                }
-              }}
-            >
-              VIEW MY WORK
-            </Button>
+            <div className="flex flex-col sm:flex-row sm:items-center gap-4 justify-center ">
+              <Button
+                component={Link}
+                to="/projects"
+                size="medium"
+                sx={{
+                  color: '#000000',
+                  backgroundColor: '#ffffff',
+                  textTransform: 'none',
+                  fontWeight: 800,
+                  letterSpacing: '0.04em',
+                  px: 4,
+                  py: 1.4,
+                  borderRadius: '999px',
+                  alignSelf: 'flex-start',
+                  boxShadow: '0 14px 35px rgba(255,255,255,0.12)',
+                  transition: 'all 0.25s ease',
+                  '&:hover': {
+                    backgroundColor: 'rgba(255,255,255,0.86)',
+                    transform: 'translateY(-2px)',
+                    boxShadow: '0 18px 42px rgba(255,255,255,0.18)',
+                  }
+                }}
+              >
+                VIEW MY WORK
+              </Button>
+            </div>
           </div>
 
           {/* Right column: image */}
@@ -83,7 +114,8 @@ function Home() {
 
         </div> {/* END INTRO */}
       </div>   {/* END INTRO WRAPPER */}
-{/* Gradient Arrow pointing down */}
+
+          {/* Gradient Arrow pointing down */}
 <div className="flex justify-center">
   <div className="w-12 h-12">
     <svg viewBox="0 0 24 24" className="w-full h-full animate-bounce">
@@ -109,34 +141,37 @@ function Home() {
   <div className="bg-[#111111] border border-white/10 shadow-2xl rounded-[2rem] p-8 md:p-12 max-w-5xl w-full">
 
     {/* Wrap title in its own div */}
-    <div className="mb-8 text-center">
+    <div className="mb-8 text-center flex flex-col items-center gap-4">
       <h2 className="text-white text-3xl md:text-4xl font-extrabold">
-        Highlighted Project
+        Featured Projects
       </h2>
     </div>
 
-    
+    {highlightedProjects.map((project, index) => (
+      <div
+        key={project.title}
+        className={`rounded-[1.75rem] border border-white/10 bg-white/[0.02] p-4 md:p-6 ${index === 0 ? 'mt-12' : 'mt-8'}`}
+      >
+        <div className="mb-4 flex flex-col gap-2 text-left">
+          <div className="flex items-center justify-between gap-3">
+            <h3 className="text-xl md:text-2xl font-bold text-white">{project.title}</h3>
+            <span className="text-xs uppercase tracking-[0.24em] text-gray-500">Featured</span>
+          </div>
+          <p className="text-sm md:text-base leading-7 text-gray-400">{project.description}</p>
+        </div>
 
-    {/* Video Container */}
-    <div className="aspect-video w-full rounded-2xl overflow-hidden border border-white/20 shadow-lg p-8 mt-12">
-      <iframe
-        className="w-full h-full"
-        src="https://www.youtube.com/embed/zQPqsqj1WKY"
-        title="Reflow Oven Controller Project"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
-      />
-    </div>
-
-    <div className="aspect-video w-full rounded-2xl overflow-hidden border border-white/20 shadow-lg mt-8">
-      <iframe
-        className="w-full h-full"
-        src="https://www.youtube.com/embed/U5jY5kz8_YE"
-        title="Tracking Field Robot Project"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
-      />
-    </div>
+        {/* Video Container */}
+        <div className="aspect-video w-full rounded-2xl overflow-hidden border border-white/20 shadow-lg">
+          <iframe
+            className="w-full h-full"
+            src={project.src}
+            title={`${project.title} Project`}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
+        </div>
+      </div>
+    ))}
   </div>
 </div>
     </>
