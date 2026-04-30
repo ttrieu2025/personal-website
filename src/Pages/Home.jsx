@@ -1,19 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FaLinkedin, FaInstagram, FaGithub, FaEnvelope, FaSpotify } from 'react-icons/fa';
 import Button from '@mui/material/Button';
 import { Link } from "react-router-dom";
 
 function Home() {
+  const [activeMedia, setActiveMedia] = useState(null);
+
   const highlightedProjects = [
     {
       title: "Tracking Field Robot",
       description: "Autonomous motion, sensing, and real-world testing in a mobile robotics workflow.",
-      src: "https://www.youtube.com/embed/U5jY5kz8_YE"
+      videoSrc: "https://www.youtube.com/embed/U5jY5kz8_YE",
+      schematicSrc: "/schematic-robot.png",
+      schematicAlt: "Tracking Field Robot electrical schematic"
     },
     {
       title: "Reflow Oven Controller",
       description: "Embedded controls, hardware integration, and closed-loop temperature tuning.",
-      src: "https://www.youtube.com/embed/zQPqsqj1WKY"
+      videoSrc: "https://www.youtube.com/embed/zQPqsqj1WKY",
+      schematicSrc: "/schematic-oven.png",
+      schematicAlt: "Reflow Oven Controller electrical schematic"
     }
 
   ];
@@ -160,20 +166,103 @@ function Home() {
           <p className="text-sm md:text-base leading-7 text-gray-400">{project.description}</p>
         </div>
 
-        {/* Video Container */}
-        <div className="aspect-video w-full rounded-2xl overflow-hidden border border-white/20 shadow-lg">
-          <iframe
-            className="w-full h-full"
-            src={project.src}
-            title={`${project.title} Project`}
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          />
+        <div className="mx-auto grid max-w-4xl items-center gap-4 lg:grid-cols-2">
+          <div className="overflow-hidden rounded-2xl border border-white/20 shadow-lg">
+            <div className="flex items-center justify-between border-b border-white/10 bg-white/[0.03] px-4 py-3">
+              <span className="text-xs font-semibold uppercase tracking-[0.22em] text-gray-500">Demo Video</span>
+              <button
+                type="button"
+                onClick={() => setActiveMedia({ type: 'video', project })}
+                className="rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs font-semibold text-white transition hover:bg-white/10"
+              >
+                Enlarge
+              </button>
+            </div>
+            <button
+              type="button"
+              onClick={() => setActiveMedia({ type: 'video', project })}
+              className="mx-auto block aspect-video w-full cursor-zoom-in overflow-hidden"
+            >
+              <iframe
+                className="h-full w-full pointer-events-none"
+                src={project.videoSrc}
+                title={`${project.title} Project`}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </button>
+          </div>
+
+          <div className="overflow-hidden rounded-2xl border border-white/20 shadow-lg">
+            <div className="flex items-center justify-between border-b border-white/10 bg-white/[0.03] px-4 py-3">
+              <span className="text-xs font-semibold uppercase tracking-[0.22em] text-gray-500">Electrical Schematic</span>
+            </div>
+            <div className="flex h-full min-h-[16rem] items-center justify-center bg-[#0b0b0b] p-4">
+              <img
+                src={project.schematicSrc}
+                alt={project.schematicAlt}
+                className="mx-auto max-h-[26rem] max-w-full cursor-zoom-in rounded-xl object-contain transition duration-300 hover:scale-[1.02]"
+                onClick={() => setActiveMedia({ type: 'schematic', project })}
+              />
+            </div>
+          </div>
         </div>
       </div>
     ))}
   </div>
 </div>
+
+      {activeMedia && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 px-4 py-8"
+          onClick={() => setActiveMedia(null)}
+          role="button"
+          tabIndex={0}
+          onKeyDown={(event) => {
+            if (event.key === 'Escape' || event.key === 'Enter' || event.key === ' ') {
+              setActiveMedia(null);
+            }
+          }}
+        >
+          <div
+            className="relative w-full max-w-6xl rounded-[2rem] border border-white/10 bg-[#111111] p-4 md:p-6 shadow-2xl"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <button
+              type="button"
+              onClick={() => setActiveMedia(null)}
+              className="absolute right-4 top-4 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-sm font-semibold text-white transition hover:bg-white/10"
+            >
+              Close
+            </button>
+            <div className="mb-4 pr-16 text-left">
+              <h3 className="text-xl font-bold text-white">{activeMedia.project.title}</h3>
+              <p className="text-sm text-gray-400">
+                {activeMedia.type === 'video' ? 'Project video' : 'Electrical schematic'}
+              </p>
+            </div>
+            <div className="flex max-h-[80vh] items-center justify-center overflow-auto rounded-[1.5rem] bg-black p-4">
+              {activeMedia.type === 'video' ? (
+                <div className="aspect-video w-full overflow-hidden rounded-xl">
+                  <iframe
+                    className="h-full w-full"
+                    src={activeMedia.project.videoSrc}
+                    title={`${activeMedia.project.title} Project enlarged video`}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                </div>
+              ) : (
+                <img
+                  src={activeMedia.project.schematicSrc}
+                  alt={activeMedia.project.schematicAlt}
+                  className="h-auto max-h-[72vh] w-full object-contain"
+                />
+              )}
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 }
