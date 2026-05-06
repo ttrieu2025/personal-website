@@ -175,7 +175,7 @@ function Home() {
                 onClick={() => setActiveMedia({ type: 'video', project })}
                 className="rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs font-semibold text-white transition hover:bg-white/10"
               >
-                Enlarge
+                +
               </button>
             </div>
             <button

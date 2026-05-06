@@ -20,7 +20,7 @@ function About() {
 
   const skills = [
     'Altium Designer', 'Prototyping', 'Circuit Design', 
-    'Python', 'MATLAB', 'C/C++', 'Javascript', 'TailwindCSS'
+    'Python', 'MATLAB', 'C/C++', 'JavaScript', 'TailwindCSS'
   ];
 
   return (
