@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
@@ -14,7 +14,16 @@ import 'swiper/css/pagination';
 import 'swiper/css/effect-fade';
 import 'katex/dist/katex.min.css';
 
+const playlists = [
+  "28m92FXBUeN1B3NmKHZKjH",
+  "7JsX7h2KidnM87kAQ5QChq",
+  "0o6iOAQ3V5h7Q3Lp4dZksn",
+  "7vbnec2YeR2DQp82bZDsVx",
+  "5JgufXX9FsTaW5OX0UWDZS"
+];
 function About() {
+  const [currentPlaylistIndex, setCurrentPlaylistIndex] = useState(0);
+
   const profileImages = [
     "/me.jpg",
     "/me1.jpg", 
@@ -144,6 +153,60 @@ function About() {
               </div>
             </div>
           ))}
+        </div>
+
+
+        
+      </div>
+
+      {/* Spotify Section */}
+      <div className="w-full rounded-[2rem] border border-green-500/20 bg-gradient-to-br from-[#111111] to-[#0a0a0a] p-8 md:p-12 shadow-2xl overflow-hidden relative group">
+        {/* Decorative background element */}
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-green-500/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+        <div className="absolute -bottom-20 -left-20 w-60 h-60 bg-green-500/5 rounded-full blur-3xl" />
+
+        <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
+          {/* Left: Spotify Content */}
+          <div className="flex flex-col gap-6 flex-1">
+            <div className="flex items-center gap-3">
+            <svg
+              className="w-10 h-10 text-grey-400"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.6 0 12 0zm5.521 17.34c-.24.36-.66.48-1.02.24-2.82-1.74-6.36-2.1-10.56-1.14-.42.12-.78-.12-.9-.54-.12-.42.06-.78.48-.9 4.56-1.02 8.52-.6 11.64 1.32.42.18.48.66.3 1.02zm1.44-3.3c-.3.42-.84.6-1.26.3-3.24-1.98-8.16-2.58-12.02-1.5-.48.12-1.02-.06-1.14-.54-.12-.48.04-1.1.52-1.24 4.44-1.44 10 .08 13.64 1.92.36.24.66.78.26 1.06zm.18-3.42c-3.9-2.34-10.38-2.52-14.1-1.38-.6.18-1.2-.18-1.38-.78-.18-.6.18-1.2.78-1.38 4.32-1.32 11.52-1.08 15.84 1.5.54.3.72 1.02.42 1.56-.3.48-1.02.66-1.56.48z" />
+            </svg>
+              <h3 className="text-2xl font-extrabold text-gray-400">
+                Music <span className="text-gray-100"> is my Saviour</span>
+              </h3>
+            </div>
+            <div className="relative">
+              <iframe
+                data-testid="embed-iframe"
+                style={{ borderRadius: "12px" }}
+                src={`https://open.spotify.com/embed/playlist/${playlists[currentPlaylistIndex]}?utm_source=generator`}
+                width="100%"
+                height="352"
+                frameBorder="0"
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                allowFullScreen
+                loading="lazy"
+              />
+
+              {/* Change Playlist Button */}
+              <div className="mt-4 flex justify-center">
+                <button
+                  onClick={() => setCurrentPlaylistIndex((prev) => (prev + 1) % playlists.length)}
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white-400 hover:bg-grey-400 text-white font-bold transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-grey-500/50"
+                >
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                  </svg>
+                  Change Playlist 
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
