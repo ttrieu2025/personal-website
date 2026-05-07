@@ -3,6 +3,7 @@ import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import { BlockMath } from 'react-katex';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, EffectFade } from 'swiper/modules';
@@ -11,6 +12,7 @@ import { Autoplay, Pagination, EffectFade } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/effect-fade';
+import 'katex/dist/katex.min.css';
 
 function About() {
   const profileImages = [
@@ -22,6 +24,31 @@ function About() {
     'Altium Designer', 'Prototyping', 'Circuit Design', 
     'Python', 'MATLAB', 'C/C++', 'JavaScript', 'TailwindCSS'
   ];
+
+  const latexEquations = [
+    String.raw`
+    \begin{aligned}
+    \nabla \cdot \mathbf{E}&= \frac{\rho}{\varepsilon_0} \\
+    \nabla \cdot \mathbf{B}&=0 \\
+    \nabla \times \mathbf{E}&=-\frac{\partial \mathbf{B}}{\partial t} \\
+    \nabla \times \mathbf{B}&=\mu_0\mathbf{J}+\mu_0\varepsilon_0\frac{\partial \mathbf{E}}{\partial t}
+    \end{aligned}`,
+    String.raw`i \hbar \frac{\partial \psi}{\partial t} =  -\frac{\hbar^2}{2m} \nabla^2 \psi+ V\psi`,
+  ];
+
+  const getEquationTextSize = (equation) => {
+    const equationLength = equation.replace(/\s/g, '').length;
+
+    if (equationLength > 170) {
+      return 'text-xs sm:text-sm md:text-base';
+    }
+
+    if (equationLength > 80) {
+      return 'text-sm sm:text-base md:text-lg';
+    }
+
+    return 'text-base sm:text-lg md:text-xl';
+  };
 
   return (
     <div className="flex flex-col items-start min-h-[80vh] mt-12 px-6 pb-20 gap-12 max-w-5xl mx-auto">
@@ -98,6 +125,27 @@ function About() {
         </div>
       </div>
 
+      {/* Add or swap LaTeX strings in the latexEquations array above. */}
+      <div className="w-full rounded-[2rem] border border-white/10 bg-[#111111] p-6 md:p-8 shadow-2xl">
+        <div className="mb-6 flex flex-col gap-2 text-left">
+          <h3 className="text-2xl font-extrabold text-white">
+            Two equations that I would <span className="text-gray-400">hypothetically</span> get tattooed
+          </h3>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+          {latexEquations.map((equation, index) => (
+            <div
+              key={index}
+              className={`rounded-2xl border border-white/10 bg-white/[0.03] px-5 py-4 text-center shadow-lg ${index === 1 ? 'flex flex-col justify-center' : ''}`}
+            >
+              <div className={`overflow-x-auto text-center text-gray-100 [&_.katex-display]:text-center ${getEquationTextSize(equation)}`}>
+                <BlockMath math={equation} />
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
 
     </div>
   );
