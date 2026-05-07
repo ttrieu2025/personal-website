@@ -129,7 +129,7 @@ function About() {
       <div className="w-full rounded-[2rem] border border-white/10 bg-[#111111] p-6 md:p-8 shadow-2xl">
         <div className="mb-6 flex flex-col gap-2 text-left">
           <h3 className="text-2xl font-extrabold text-white">
-            Two equations that I would <span className="text-gray-400">hypothetically</span> get tattooed
+            Equations that I would <span className="text-gray-400">hypothetically</span> get tattooed
           </h3>
         </div>
 
