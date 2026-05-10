@@ -113,8 +113,8 @@ const WaveSimulation = () => {
         const zFront = project(x, 0, -1.15, width, height)
         const zBack = project(x, 0, 1.15, width, height)
 
-        drawLine(ctx, [yBottom, yTop], 'rgba(62,231,255,0.12)', 1)
-        drawLine(ctx, [zFront, zBack], 'rgba(232,93,255,0.1)', 1)
+        drawLine(ctx, [yBottom, yTop], 'rgba(62,231,255,0.18)', 2)
+        drawLine(ctx, [zFront, zBack], 'rgba(232,93,255,0.16)', 2)
       }
       ctx.globalAlpha = 1
 
