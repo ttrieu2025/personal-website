@@ -4,6 +4,8 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { BlockMath } from 'react-katex';
+import WaveSimulation from '../components/WaveSimulation'
+import DoubleSlitSimulation from '../components/DoubleSlitSimulation'
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, EffectFade } from 'swiper/modules';
@@ -146,10 +148,13 @@ function About() {
           {latexEquations.map((equation, index) => (
             <div
               key={index}
-              className={`rounded-2xl border border-white/10 bg-white/[0.03] px-5 py-4 text-center shadow-lg ${index === 1 ? 'flex flex-col justify-center' : ''}`}
+              className="flex flex-col rounded-2xl border border-white/10 bg-white/[0.03] px-5 py-4 text-center shadow-lg"
             >
-              <div className={`overflow-x-auto text-center text-gray-100 [&_.katex-display]:text-center ${getEquationTextSize(equation)}`}>
+              <div className={`flex ${index === 1 ? 'min-h-[120px]' : 'min-h-[170px]'} items-center justify-center overflow-x-auto text-center text-gray-100 [&_.katex-display]:text-center ${getEquationTextSize(equation)}`}>
                 <BlockMath math={equation} />
+              </div>
+              <div className={index === 1 ? 'mt-20.5' : 'mt-3'}>
+                {index === 0 ? <WaveSimulation /> : <DoubleSlitSimulation />}
               </div>
             </div>
           ))}
@@ -205,6 +210,7 @@ function About() {
                   Change Playlist 
                 </button>
               </div>
+              
             </div>
           </div>
         </div>
