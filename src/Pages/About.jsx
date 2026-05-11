@@ -5,7 +5,7 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { BlockMath } from 'react-katex';
 import WaveSimulation from '../components/WaveSimulation'
-import DoubleSlitSimulation from '../components/DoubleSlitSimulation'
+import QmPacketSimulation from '../components/QmPacketSimulation'
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, EffectFade } from 'swiper/modules';
@@ -44,7 +44,7 @@ function About() {
     \nabla \times \mathbf{E}&=-\frac{\partial \mathbf{B}}{\partial t} \\
     \nabla \times \mathbf{B}&=\mu_0\mathbf{J}+\mu_0\varepsilon_0\frac{\partial \mathbf{E}}{\partial t}
     \end{aligned}`,
-    String.raw`i \hbar \frac{\partial \psi}{\partial t} =  -\frac{\hbar^2}{2m} \nabla^2 \psi+ V\psi`,
+    String.raw`\begin{aligned}\\[12pt] i \hbar \frac{\partial \psi}{\partial t} =  -\frac{\hbar^2}{2m} \nabla^2 \psi+ V\psi\end{aligned}`,
   ];
 
   const getEquationTextSize = (equation) => {
@@ -153,8 +153,8 @@ function About() {
               <div className={`flex ${index === 1 ? 'min-h-[120px]' : 'min-h-[170px]'} items-center justify-center overflow-x-auto text-center text-gray-100 [&_.katex-display]:text-center ${getEquationTextSize(equation)}`}>
                 <BlockMath math={equation} />
               </div>
-              <div className={index === 1 ? 'mt-20.5' : 'mt-3'}>
-                {index === 0 ? <WaveSimulation /> : <DoubleSlitSimulation />}
+              <div className={index === 1 ? 'mt-20.5' : 'mt-8.5'}>
+                {index === 0 ? <WaveSimulation /> : <QmPacketSimulation />}
               </div>
             </div>
           ))}
