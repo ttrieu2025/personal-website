@@ -317,7 +317,7 @@ const QmPacketSimulation = () => {
       {status !== 'ready' && (
         <div className="absolute inset-0 flex items-center justify-center bg-black/70 px-5 text-center text-sm font-semibold text-gray-300">
           {status === 'loading'
-            ? 'Loading Gaussian wave packetsimulation...'
+            ? 'Loading Gaussian wave packet simulation...'
             : 'Error! Please report to the website owner.'}
         </div>
       )}
