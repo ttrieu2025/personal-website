@@ -512,7 +512,7 @@ const QmPacketSimulation = () => {
 
       try {
         const response = await fetch(
-          `${API_URL}/wave?frame=${frame}`,
+          `${API_URL}/qm-wave?frame=${frame}`,
           {
             signal: controller.signal,
           },

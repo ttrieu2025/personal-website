@@ -17,7 +17,33 @@ app.add_middleware(
 def root():
     return {"message": "Server running"}
 
-@app.get("/wave")
+
+@app.get("/em-wave")
+def get_em_wave(frame: int = 0):
+
+    x = np.linspace(0, 4*np.pi, 900)
+
+    phase = x - frame * 0.08
+
+    electric = np.sin(phase)
+    magnetic = np.sin(phase)
+
+    x0 = 2*np.pi
+    ey = np.sin(x0 - frame * 0.08)
+    bz = np.sin(x0 - frame * 0.08)
+    sx = 1.2
+
+    return {
+        "x": x.tolist(),
+        "electric": electric.tolist(),
+        "magnetic": magnetic.tolist(),
+        "x0": float(x0),
+        "ey": float(ey),
+        "bz": float(bz),
+        "sx": float(sx),
+    }
+
+@app.get("/qm-wave")
 def get_wave(frame: int = 0):
     x = np.linspace(-36, 36, 850)
 

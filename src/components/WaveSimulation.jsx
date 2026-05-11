@@ -1,4 +1,11 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
+
+const API_URL =
+  import.meta.env.VITE_WAVE_API_URL ||
+  'http://127.0.0.1:8000'
+
+const MAX_FRAME = 700
+
 
 const NUM_POINTS = 900
 const WAVE_LENGTH = 4 * Math.PI
@@ -55,99 +62,319 @@ const drawArrow = (ctx, from, to, color, label) => {
 
 const WaveSimulation = () => {
   const canvasRef = useRef(null)
+  const [status, setStatus] = useState('loading')
 
-  useEffect(() => {
-    const canvas = canvasRef.current
-    if (!canvas) return undefined
+useEffect(() => {
+  const canvas = canvasRef.current
+  if (!canvas) return undefined
 
-    const ctx = canvas.getContext('2d')
-    let frame = 0
-    let animationId
+  const ctx = canvas.getContext('2d')
 
-    const resizeCanvas = () => {
-      const rect = canvas.getBoundingClientRect()
-      const pixelRatio = window.devicePixelRatio || 1
+  let frame = 0
+  let animationId
 
-      canvas.width = Math.max(1, Math.floor(rect.width * pixelRatio))
-      canvas.height = Math.max(1, Math.floor(rect.height * pixelRatio))
-      ctx.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0)
+  let stopped = false
+  let fetching = false
+
+  const controller = new AbortController()
+
+  const resizeCanvas = () => {
+    const rect = canvas.getBoundingClientRect()
+    const pixelRatio = window.devicePixelRatio || 1
+
+    canvas.width = Math.max(
+      1,
+      Math.floor(rect.width * pixelRatio),
+    )
+
+    canvas.height = Math.max(
+      1,
+      Math.floor(rect.height * pixelRatio),
+    )
+
+    ctx.setTransform(
+      pixelRatio,
+      0,
+      0,
+      pixelRatio,
+      0,
+      0,
+    )
+  }
+
+  const renderFrame = (data) => {
+    const width = canvas.clientWidth
+    const height = canvas.clientHeight
+
+    const {
+      x,
+      electric,
+      magnetic,
+      x0,
+      ey,
+      bz,
+      sx,
+    } = data
+
+    const axis = []
+    const electricPoints = []
+    const magneticPoints = []
+
+    for (let i = 0; i < x.length; i += 1) {
+      axis.push(
+        project(x[i], 0, 0, width, height),
+      )
+
+      electricPoints.push(
+        project(
+          x[i],
+          electric[i],
+          0,
+          width,
+          height,
+        ),
+      )
+
+      magneticPoints.push(
+        project(
+          x[i],
+          0,
+          magnetic[i],
+          width,
+          height,
+        ),
+      )
     }
 
-    const render = () => {
-      const width = canvas.clientWidth
-      const height = canvas.clientHeight
-      const phase = frame * 0.1
-      const axis = []
-      const electric = []
-      const magnetic = []
+    ctx.clearRect(0, 0, width, height)
 
-      for (let i = 0; i < NUM_POINTS; i += 1) {
-        const x = (i / (NUM_POINTS - 1)) * WAVE_LENGTH
-        const wave = Math.sin(x - phase)
+    const gradient =
+      ctx.createLinearGradient(
+        0,
+        0,
+        width,
+        height,
+      )
 
-        axis.push(project(x, 0, 0, width, height))
-        electric.push(project(x, wave, 0, width, height))
-        magnetic.push(project(x, 0, wave, width, height))
+    gradient.addColorStop(0, '#030712')
+    gradient.addColorStop(0.55, '#050505')
+    gradient.addColorStop(1, '#120816')
+
+    ctx.fillStyle = gradient
+    ctx.fillRect(0, 0, width, height)
+
+    ctx.globalAlpha = 0.55
+
+    for (let i = 0; i < 18; i += 1) {
+      const gx =
+        (i / 17) * WAVE_LENGTH
+
+      const yTop = project(
+        gx,
+        1.15,
+        0,
+        width,
+        height,
+      )
+
+      const yBottom = project(
+        gx,
+        -1.15,
+        0,
+        width,
+        height,
+      )
+
+      const zFront = project(
+        gx,
+        0,
+        -1.15,
+        width,
+        height,
+      )
+
+      const zBack = project(
+        gx,
+        0,
+        1.15,
+        width,
+        height,
+      )
+
+      drawLine(
+        ctx,
+        [yBottom, yTop],
+        'rgba(62,231,255,0.18)',
+        2,
+      )
+
+      drawLine(
+        ctx,
+        [zFront, zBack],
+        'rgba(232,93,255,0.16)',
+        2,
+      )
+    }
+
+    ctx.globalAlpha = 1
+
+    drawLine(
+      ctx,
+      axis,
+      'rgba(255,255,255,0.22)',
+      1.5,
+    )
+
+    drawLine(
+      ctx,
+      magneticPoints,
+      '#e85dff',
+      3,
+    )
+
+    drawLine(
+      ctx,
+      electricPoints,
+      '#3ee7ff',
+      3,
+    )
+
+    const origin = project(
+      x0,
+      0,
+      0,
+      width,
+      height,
+    )
+
+    const electricTip = project(
+      x0,
+      ey,
+      0,
+      width,
+      height,
+    )
+
+    const magneticTip = project(
+      x0,
+      0,
+      bz,
+      width,
+      height,
+    )
+
+    const poyntingTip = project(
+      x0 + sx * 0.95,
+      0,
+      0,
+      width,
+      height,
+    )
+
+    drawArrow(
+      ctx,
+      origin,
+      electricTip,
+      '#3ee7ff',
+      'E',
+    )
+
+    drawArrow(
+      ctx,
+      origin,
+      magneticTip,
+      '#e85dff',
+      'B',
+    )
+
+    drawArrow(
+      ctx,
+      origin,
+      poyntingTip,
+      '#ffd44d',
+      'S',
+    )
+  }
+
+  const fetchFrame = async () => {
+    if (fetching || stopped) return
+
+    fetching = true
+
+    try {
+      const response = await fetch(
+        `${API_URL}/em-wave?frame=${frame}`,
+        {
+          signal: controller.signal,
+        },
+      )
+
+      if (!response.ok) {
+        throw new Error(
+          `Wave API returned ${response.status}`,
+        )
       }
 
-      const idx = Math.floor((frame * 3) % NUM_POINTS)
-      const x0 = (idx / (NUM_POINTS - 1)) * WAVE_LENGTH
-      const ey = Math.sin(x0 - phase)
-      const bz = Math.sin(x0 - phase)
-      const sx = ey * bz
+      const data = await response.json()
 
-      ctx.clearRect(0, 0, width, height)
+      renderFrame(data)
+      setStatus('ready')
 
-      const gradient = ctx.createLinearGradient(0, 0, width, height)
-      gradient.addColorStop(0, '#030712')
-      gradient.addColorStop(0.55, '#050505')
-      gradient.addColorStop(1, '#120816')
-      ctx.fillStyle = gradient
-      ctx.fillRect(0, 0, width, height)
-
-      ctx.globalAlpha = 0.55
-      for (let i = 0; i < 18; i += 1) {
-        const x = (i / 17) * WAVE_LENGTH
-        const yTop = project(x, 1.15, 0, width, height)
-        const yBottom = project(x, -1.15, 0, width, height)
-        const zFront = project(x, 0, -1.15, width, height)
-        const zBack = project(x, 0, 1.15, width, height)
-
-        drawLine(ctx, [yBottom, yTop], 'rgba(62,231,255,0.18)', 2)
-        drawLine(ctx, [zFront, zBack], 'rgba(232,93,255,0.16)', 2)
+      frame =
+        frame >= MAX_FRAME
+          ? 0
+          : frame + 2
+    } catch (error) {
+      if (error.name !== 'AbortError') {
+        setStatus('offline')
+        console.error(error)
       }
-      ctx.globalAlpha = 1
-
-      drawLine(ctx, axis, 'rgba(255,255,255,0.22)', 1.5)
-      drawLine(ctx, magnetic, '#e85dff', 3)
-      drawLine(ctx, electric, '#3ee7ff', 3)
-
-      const origin = project(x0, 0, 0, width, height)
-      const electricTip = project(x0, ey, 0, width, height)
-      const magneticTip = project(x0, 0, bz, width, height)
-      const poyntingTip = project(x0 + sx * 0.95, 0, 0, width, height)
-
-      drawArrow(ctx, origin, electricTip, '#3ee7ff', 'E')
-      drawArrow(ctx, origin, magneticTip, '#e85dff', 'B')
-      drawArrow(ctx, origin, poyntingTip, '#ffd44d', 'S')
-
-      frame = (frame + 1) % 5000
-      animationId = requestAnimationFrame(render)
+    } finally {
+      fetching = false
     }
+  }
 
-    resizeCanvas()
-    render()
-    window.addEventListener('resize', resizeCanvas)
+  const animate = () => {
+    fetchFrame()
 
-    return () => {
-      cancelAnimationFrame(animationId)
-      window.removeEventListener('resize', resizeCanvas)
-    }
-  }, [])
+    animationId = window.setTimeout(
+      animate,
+      33,
+    )
+  }
+
+  resizeCanvas()
+  animate()
+
+  window.addEventListener(
+    'resize',
+    resizeCanvas,
+  )
+
+  return () => {
+    stopped = true
+
+    controller.abort()
+
+    window.clearTimeout(animationId)
+
+    window.removeEventListener(
+      'resize',
+      resizeCanvas,
+    )
+  }
+}, [])
 
   return (
-    <div className="h-[240px] w-full overflow-hidden rounded-2xl border border-white/10 bg-black sm:h-[300px]">
+    <div className="relative h-[240px] w-full overflow-hidden rounded-2xl border border-white/10 bg-black sm:h-[300px]">
       <canvas ref={canvasRef} className="h-full w-full" aria-label="Electromagnetic wave animation" />
+      {status !== 'ready' && (
+        <div className="absolute inset-0 flex items-center justify-center bg-black/70 px-5 text-center text-sm font-semibold text-gray-300">
+          {status === 'loading'
+            ? 'Loading EM wave simulation...'
+            : 'Start the Python API on port 8000 to display the simulation.'}
+        </div>
+      )}
     </div>
   )
 }
