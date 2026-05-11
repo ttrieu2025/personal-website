@@ -18,13 +18,18 @@ const MAX_FRAME = 700
 
 const WORLD_SCALE = 1
 
-const project = (x, y, z, width, height) => {
+const createProjector = (
+  width,
+  height,
+) => {
   const padding = width * 0.12
 
-  const usableWidth = width - padding * 2
+  const usableWidth =
+    width - padding * 2
 
   const scaleX =
-    (usableWidth / (X_MAX - X_MIN)) *
+    (usableWidth /
+      (X_MAX - X_MIN)) *
     WORLD_SCALE
 
   const scaleY =
@@ -33,9 +38,11 @@ const project = (x, y, z, width, height) => {
     WORLD_SCALE
 
   const originX = padding
-  const originY = height * 0.56
 
-  return {
+  const originY =
+    height * 0.56
+
+  return (x, y, z) => ({
     x:
       originX +
       (x - X_MIN) * scaleX -
@@ -45,7 +52,7 @@ const project = (x, y, z, width, height) => {
       originY -
       y * scaleY +
       z * scaleY * 0.28,
-  }
+  })
 }
 
 const drawLine = (
@@ -55,38 +62,51 @@ const drawLine = (
   width = 2,
   alpha = 1,
 ) => {
-  if (points.length < 2) return
+  if (points.length < 2)
+    return
 
   ctx.save()
+
   ctx.globalAlpha = alpha
 
   ctx.beginPath()
 
-  points.forEach((point, index) => {
-    if (index === 0) {
-      ctx.moveTo(point.x, point.y)
-    } else {
-      ctx.lineTo(point.x, point.y)
-    }
-  })
+  ctx.moveTo(
+    points[0].x,
+    points[0].y,
+  )
+
+  for (
+    let i = 1;
+    i < points.length;
+    i++
+  ) {
+    ctx.lineTo(
+      points[i].x,
+      points[i].y,
+    )
+  }
 
   ctx.strokeStyle = color
+
   ctx.lineWidth = width
+
   ctx.lineCap = 'round'
+
   ctx.lineJoin = 'round'
 
   ctx.stroke()
+
   ctx.restore()
 }
 
 const drawBoxEdge = (
   ctx,
+  project,
   start,
   end,
   color,
   alpha,
-  width,
-  height,
 ) => {
   drawLine(
     ctx,
@@ -95,16 +115,12 @@ const drawBoxEdge = (
         start[0],
         start[1],
         start[2],
-        width,
-        height,
       ),
 
       project(
         end[0],
         end[1],
         end[2],
-        width,
-        height,
       ),
     ],
     color,
@@ -113,9 +129,22 @@ const drawBoxEdge = (
   )
 }
 
-const drawScene = (ctx, canvas, waveData) => {
-  const width = canvas.clientWidth
-  const height = canvas.clientHeight
+const drawScene = (
+  ctx,
+  canvas,
+  waveData,
+) => {
+  const width =
+    canvas.clientWidth
+
+  const height =
+    canvas.clientHeight
+
+  const project =
+    createProjector(
+      width,
+      height,
+    )
 
   const {
     x,
@@ -126,229 +155,245 @@ const drawScene = (ctx, canvas, waveData) => {
     center,
   } = waveData
 
-  ctx.clearRect(0, 0, width, height)
-
-  // Background
-  const gradient = ctx.createLinearGradient(
+  ctx.clearRect(
     0,
     0,
     width,
     height,
   )
 
-  gradient.addColorStop(0, '#030712')
-  gradient.addColorStop(0.55, '#050505')
-  gradient.addColorStop(1, '#16061a')
+  // Background
+  const gradient =
+    ctx.createLinearGradient(
+      0,
+      0,
+      width,
+      height,
+    )
+
+  gradient.addColorStop(
+    0,
+    '#030712',
+  )
+
+  gradient.addColorStop(
+    0.55,
+    '#050505',
+  )
+
+  gradient.addColorStop(
+    1,
+    '#16061a',
+  )
 
   ctx.fillStyle = gradient
-  ctx.fillRect(0, 0, width, height)
+
+  ctx.fillRect(
+    0,
+    0,
+    width,
+    height,
+  )
 
   // Prism edges
 
   // top rectangle
   drawBoxEdge(
     ctx,
+    project,
     [X_MIN, Y_TOP, Z_FLOOR],
     [X_MAX, Y_TOP, Z_FLOOR],
     '#3ee7ff',
-    0.2,
-    width,
-    height,
+    0.16,
   )
 
   drawBoxEdge(
     ctx,
+    project,
     [X_MIN, Y_TOP, Z_BACK],
     [X_MAX, Y_TOP, Z_BACK],
     '#3ee7ff',
-    0.2,
-    width,
-    height,
+    0.16,
   )
 
   drawBoxEdge(
     ctx,
+    project,
     [X_MIN, Y_TOP, Z_FLOOR],
     [X_MIN, Y_TOP, Z_BACK],
     '#3ee7ff',
-    0.2,
-    width,
-    height,
+    0.16,
   )
 
   drawBoxEdge(
     ctx,
+    project,
     [X_MAX, Y_TOP, Z_FLOOR],
     [X_MAX, Y_TOP, Z_BACK],
     '#3ee7ff',
-    0.2,
-    width,
-    height,
+    0.16,
   )
 
   // bottom edges
   drawBoxEdge(
     ctx,
+    project,
     [X_MIN, Y_FLOOR, Z_FLOOR],
     [X_MAX, Y_FLOOR, Z_FLOOR],
     '#ffd44d',
-    0.28,
-    width,
-    height,
+    0.2,
   )
 
   drawBoxEdge(
     ctx,
+    project,
     [X_MIN, Y_FLOOR, Z_FLOOR],
     [X_MIN, Y_TOP, Z_FLOOR],
     '#ffd44d',
-    0.24,
-    width,
-    height,
+    0.18,
   )
 
   drawBoxEdge(
     ctx,
+    project,
     [X_MAX, Y_FLOOR, Z_FLOOR],
     [X_MAX, Y_TOP, Z_FLOOR],
     '#ffd44d',
-    0.24,
-    width,
-    height,
+    0.18,
   )
 
   // side depth edges
   drawBoxEdge(
     ctx,
+    project,
     [X_SIDE, Y_FLOOR, Z_FLOOR],
     [X_SIDE, Y_FLOOR, Z_BACK],
     '#e85dff',
-    0.25,
-    width,
-    height,
+    0.2,
   )
 
   drawBoxEdge(
     ctx,
+    project,
     [X_SIDE, Y_TOP, Z_FLOOR],
     [X_SIDE, Y_TOP, Z_BACK],
     '#e85dff',
-    0.25,
-    width,
-    height,
+    0.2,
   )
 
   // Main axis
-  const axis = x.map((value) =>
-    project(value, 0, 0, width, height),
-  )
+  const axis = []
 
-  // Main 3D wave packet
-  const packet = x.map((value, index) =>
-    project(
-      value,
-      real[index],
-      imag[index],
-      width,
-      height,
-    ),
-  )
+  const packet = []
 
-  // TOP projection (purple)
-  const topProjection = x.map((value, index) =>
-    project(
-      value,
-      Y_TOP,
-      imag[index],
-      width,
-      height,
-    ),
-  )
+  const topProjection = []
 
-  // FLOOR projection (yellow)
-const floorProjection = x.map((value, index) =>
-  project(
-    value,
-    Y_FLOOR-0.4,
-    -probability[index] * 1.8,
-    width,
-    height,
-  ),
-)
-  // SIDE projection
-  const sideProjection = x
-    .map((value, index) => ({
-      value,
-      index,
-    }))
-    .filter(
-      ({ index }) => envelope[index] > 0.06,
-    )
-    .map(({ index }) =>
+  const floorProjection = []
+
+  const sideProjection = []
+
+  const envelopeYTop = []
+
+  const envelopeYBottom = []
+
+  const envelopeZTop = []
+
+  const envelopeZBottom = []
+
+  const length = x.length
+
+  for (
+    let i = 0;
+    i < length;
+    i += 1
+  ) {
+    const value = x[i]
+
+    axis.push(
       project(
-        X_SIDE,
-        real[index],
-        imag[index],
-        width,
-        height,
+        value,
+        0,
+        0,
       ),
     )
 
-  // Envelope guides
-  const envelopeYTop = x.map(
-    (value, index) =>
+    packet.push(
       project(
         value,
-        envelope[index],
-        0,
-        width,
-        height,
+        real[i],
+        imag[i],
       ),
-  )
+    )
 
-  const envelopeYBottom = x.map(
-    (value, index) =>
+    topProjection.push(
       project(
         value,
-        -envelope[index],
-        0,
-        width,
-        height,
+        Y_TOP,
+        imag[i],
       ),
-  )
+    )
 
-  const envelopeZTop = x.map(
-    (value, index) =>
+    floorProjection.push(
       project(
         value,
-        0,
-        envelope[index],
-        width,
-        height,
+        Y_FLOOR - 0.4,
+        -probability[i] * 1.8,
       ),
-  )
+    )
 
-  const envelopeZBottom = x.map(
-    (value, index) =>
+    envelopeYTop.push(
+      project(
+        value,
+        envelope[i],
+        0,
+      ),
+    )
+
+    envelopeYBottom.push(
+      project(
+        value,
+        -envelope[i],
+        0,
+      ),
+    )
+
+    envelopeZTop.push(
       project(
         value,
         0,
-        -envelope[index],
-        width,
-        height,
+        envelope[i],
       ),
-  )
+    )
+
+    envelopeZBottom.push(
+      project(
+        value,
+        0,
+        -envelope[i],
+      ),
+    )
+
+    if (
+      envelope[i] > 0.06
+    ) {
+      sideProjection.push(
+        project(
+          X_SIDE,
+          real[i],
+          imag[i],
+        ),
+      )
+    }
+  }
 
   // Motion vector
   const motion = [
-    project(center, 0, 0, width, height),
+    project(center, 0, 0),
 
     project(
       center + 3.5,
       0,
       0,
-      width,
-      height,
     ),
   ]
 
@@ -357,40 +402,40 @@ const floorProjection = x.map((value, index) =>
   drawLine(
     ctx,
     axis,
-    'rgba(255,255,255,0.24)',
-    1.5,
+    'rgba(255,255,255,0.18)',
+    1.2,
   )
 
   drawLine(
     ctx,
     envelopeYTop,
     '#3ee7ff',
-    1.2,
-    0.28,
+    0.9,
+    0.16,
   )
 
   drawLine(
     ctx,
     envelopeYBottom,
     '#3ee7ff',
-    1.2,
-    0.28,
+    0.9,
+    0.16,
   )
 
   drawLine(
     ctx,
     envelopeZTop,
     '#e85dff',
-    1.2,
-    0.24,
+    0.9,
+    0.14,
   )
 
   drawLine(
     ctx,
     envelopeZBottom,
     '#e85dff',
-    1.2,
-    0.24,
+    0.9,
+    0.14,
   )
 
   // Purple top graph
@@ -398,8 +443,8 @@ const floorProjection = x.map((value, index) =>
     ctx,
     topProjection,
     '#e85dff',
-    2.2,
-    0.82,
+    1.9,
+    0.76,
   )
 
   // Yellow bottom graph
@@ -407,8 +452,8 @@ const floorProjection = x.map((value, index) =>
     ctx,
     floorProjection,
     '#ffd44d',
-    2.6,
-    0.94,
+    2,
+    0.9,
   )
 
   // Cyan side graph
@@ -416,17 +461,17 @@ const floorProjection = x.map((value, index) =>
     ctx,
     sideProjection,
     '#3ee7ff',
-    2.2,
-    0.86,
+    1.9,
+    0.78,
   )
 
   // Main packet glow
   drawLine(
     ctx,
     packet,
-    'rgba(255,255,255,0.42)',
-    5,
-    0.18,
+    'rgba(255,255,255,0.32)',
+    3,
+    0.12,
   )
 
   // Main packet
@@ -434,38 +479,56 @@ const floorProjection = x.map((value, index) =>
     ctx,
     packet,
     '#3ee7ff',
-    2.8,
+    2.2,
+    0.96,
   )
 
   // Motion arrow
   drawLine(
     ctx,
     motion,
-    2.5,
-    0.68,
+    '#ffffff',
+    1.8,
+    0.58,
   )
 }
 
 const QmPacketSimulation = () => {
-  const canvasRef = useRef(null)
+  const canvasRef =
+    useRef(null)
 
-  const latestDataRef = useRef(null)
+  const latestDataRef =
+    useRef(null)
 
   const [status, setStatus] =
     useState('loading')
 
   useEffect(() => {
-    const canvas = canvasRef.current
+    const canvas =
+      canvasRef.current
 
-    if (!canvas) return undefined
+    if (!canvas)
+      return undefined
 
-    const ctx = canvas.getContext('2d')
+    const ctx =
+      canvas.getContext(
+        '2d',
+        {
+          alpha: false,
+        },
+      )
 
     let frame = 0
+
     let animationId
 
     let stopped = false
+
     let fetching = false
+
+    let lastFetch = 0
+
+    const FETCH_INTERVAL = 60
 
     const controller =
       new AbortController()
@@ -475,17 +538,28 @@ const QmPacketSimulation = () => {
         canvas.getBoundingClientRect()
 
       const pixelRatio =
-        window.devicePixelRatio || 1
+        Math.min(
+          window.devicePixelRatio ||
+            1,
+          2,
+        )
 
       canvas.width = Math.max(
         1,
-        Math.floor(rect.width * pixelRatio),
+        Math.floor(
+          rect.width *
+            pixelRatio,
+        ),
       )
 
-      canvas.height = Math.max(
-        1,
-        Math.floor(rect.height * pixelRatio),
-      )
+      canvas.height =
+        Math.max(
+          1,
+          Math.floor(
+            rect.height *
+              pixelRatio,
+          ),
+        )
 
       ctx.setTransform(
         pixelRatio,
@@ -496,7 +570,9 @@ const QmPacketSimulation = () => {
         0,
       )
 
-      if (latestDataRef.current) {
+      if (
+        latestDataRef.current
+      ) {
         drawScene(
           ctx,
           canvas,
@@ -505,62 +581,115 @@ const QmPacketSimulation = () => {
       }
     }
 
-    const fetchFrame = async () => {
-      if (fetching || stopped) return
-
-      fetching = true
-
-      try {
-        const response = await fetch(
-          `${API_URL}/qm-wave?frame=${frame}`,
-          {
-            signal: controller.signal,
-          },
-        )
-
-        if (!response.ok) {
-          throw new Error(
-            `Wave API returned ${response.status}`,
-          )
+    const fetchFrame =
+      async () => {
+        if (
+          fetching ||
+          stopped
+        ) {
+          return
         }
 
-        const data = await response.json()
+        fetching = true
 
-        latestDataRef.current = data
+        try {
+          const response =
+            await fetch(
+              `${API_URL}/qm-wave?frame=${frame}`,
+              {
+                signal:
+                  controller.signal,
+              },
+            )
 
-        drawScene(ctx, canvas, data)
+          if (
+            !response.ok
+          ) {
+            throw new Error(
+              `Wave API returned ${response.status}`,
+            )
+          }
 
-        setStatus('ready')
+          const data =
+            await response.json()
 
-        frame =
-          frame >= MAX_FRAME
-            ? 0
-            : frame + 2
-      } catch (error) {
-        if (error.name !== 'AbortError') {
-          setStatus('offline')
+          latestDataRef.current =
+            data
+
+          setStatus('ready')
+
+          frame =
+            frame >=
+            MAX_FRAME
+              ? 0
+              : frame + 2
+        } catch (error) {
+          if (
+            error.name !==
+            'AbortError'
+          ) {
+            setStatus(
+              'offline',
+            )
+          }
+        } finally {
+          fetching = false
         }
-      } finally {
-        fetching = false
       }
-    }
 
-    const animate = () => {
-      fetchFrame()
+    const animate = (
+      time,
+    ) => {
+      if (
+        time - lastFetch >
+        FETCH_INTERVAL
+      ) {
+        fetchFrame()
+
+        lastFetch = time
+      }
+
+      if (
+        latestDataRef.current
+      ) {
+        drawScene(
+          ctx,
+          canvas,
+          latestDataRef.current,
+        )
+      }
 
       animationId =
-        window.setTimeout(
+        requestAnimationFrame(
           animate,
-          33,
         )
     }
 
     resizeCanvas()
-    animate()
+
+    animationId =
+      requestAnimationFrame(
+        animate,
+      )
+
+    let resizeTimeout
+
+    const handleResize =
+      () => {
+        clearTimeout(
+          resizeTimeout,
+        )
+
+        resizeTimeout =
+          setTimeout(
+            resizeCanvas,
+            80,
+          )
+      }
 
     window.addEventListener(
       'resize',
-      resizeCanvas,
+      handleResize,
     )
 
     return () => {
@@ -568,11 +697,13 @@ const QmPacketSimulation = () => {
 
       controller.abort()
 
-      window.clearTimeout(animationId)
+      cancelAnimationFrame(
+        animationId,
+      )
 
       window.removeEventListener(
         'resize',
-        resizeCanvas,
+        handleResize,
       )
     }
   }, [])
@@ -585,9 +716,11 @@ const QmPacketSimulation = () => {
         aria-label="API-rendered quantum wave packet simulation"
       />
 
-      {status !== 'ready' && (
+      {status !==
+        'ready' && (
         <div className="absolute inset-0 flex items-center justify-center bg-black/70 px-5 text-center text-sm font-semibold text-gray-300">
-          {status === 'loading'
+          {status ===
+          'loading'
             ? 'Loading wave simulation...'
             : 'Start the Python API on port 8000 to display the simulation.'}
         </div>
