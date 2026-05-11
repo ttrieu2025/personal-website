@@ -317,8 +317,8 @@ const QmPacketSimulation = () => {
       {status !== 'ready' && (
         <div className="absolute inset-0 flex items-center justify-center bg-black/70 px-5 text-center text-sm font-semibold text-gray-300">
           {status === 'loading'
-            ? 'Loading wave simulation...'
-            : 'Start the Python API on port 8000 to display the simulation.'}
+            ? 'Loading Gaussian wave packetsimulation...'
+            : 'Error! Please report to the website owner.'}
         </div>
       )}
     </div>
