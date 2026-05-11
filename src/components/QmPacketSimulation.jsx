@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 
 const API_URL =
   import.meta.env.VITE_WAVE_API_URL ||
-  'http://web-production-ff01e.up.railway.app'
+  'https://backend-personal-website.up.railway.app'
 
 const X_MIN = -36
 const X_MAX = 36
