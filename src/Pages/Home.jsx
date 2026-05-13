@@ -105,7 +105,7 @@ function Home() {
             <div className="relative group">
               <div className="absolute -inset-1 bg-linear from-gray-600 to-gray-900 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
               <img
-                src="/profile.png"
+                src="/Profile.jpg"
                 alt="Profile"
                 className="relative rounded-2xl shadow-xl transition-all duration-500 hover:scale-[1.03] cursor-pointer"
                 style={{
