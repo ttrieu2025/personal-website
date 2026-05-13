@@ -10,12 +10,14 @@ function Home() {
     {
       title: "Tracking Field Robot",
       description: "Autonomous motion, sensing, and real-world testing in a mobile robotics workflow.",
+      date: "January 2026",
       videoSrc: "https://www.youtube.com/embed/U5jY5kz8_YE",
       schematicSrc: "/schematic-robot.png",
       schematicAlt: "Tracking Field Robot electrical schematic"
     },
     {
       title: "Reflow Oven Controller",
+      date:"September 2025",
       description: "Embedded controls, hardware integration, and closed-loop temperature tuning.",
       videoSrc: "https://www.youtube.com/embed/zQPqsqj1WKY",
       schematicSrc: "/schematic-oven.png",
@@ -161,6 +163,7 @@ function Home() {
         <div className="mb-4 flex flex-col gap-2 text-left">
           <div className="flex items-center justify-between gap-3">
             <h3 className="text-xl md:text-2xl font-bold text-white">{project.title}</h3>
+            <span className="text-xs uppercase tracking-[0.24em] text-gray-500">{project.date}</span>
           </div>
           <p className="text-sm md:text-base leading-7 text-gray-400">{project.description}</p>
         </div>
