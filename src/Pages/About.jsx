@@ -165,7 +165,7 @@ function About() {
       </div>
 
       {/* Spotify Section */}
-      <div className="w-full rounded-[2rem] border border-green-500/20 bg-gradient-to-br from-[#111111] to-[#0a0a0a] p-8 md:p-12 shadow-2xl overflow-hidden relative group">
+      <div className="w-full rounded-[2rem] border border-white/10 bg-gradient-to-br from-[#111111] to-[#0a0a0a] p-8 md:p-12 shadow-2xl overflow-hidden relative group">
         {/* Decorative background element */}
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-green-500/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
         <div className="absolute -bottom-20 -left-20 w-60 h-60 bg-green-500/5 rounded-full blur-3xl" />
