@@ -10,14 +10,14 @@ function Home() {
     {
       title: "Tracking Field Robot",
       description: "Autonomous motion, sensing, and real-world testing in a mobile robotics workflow.",
-      date: "January 2026",
+      date: "March 2026",
       videoSrc: "https://www.youtube.com/embed/U5jY5kz8_YE",
       schematicSrc: "/schematic-robot.png",
       schematicAlt: "Tracking Field Robot electrical schematic"
     },
     {
       title: "Reflow Oven Controller",
-      date:"September 2025",
+      date:"January 2026",
       description: "Embedded controls, hardware integration, and closed-loop temperature tuning.",
       videoSrc: "https://www.youtube.com/embed/zQPqsqj1WKY",
       schematicSrc: "/schematic-oven.png",
