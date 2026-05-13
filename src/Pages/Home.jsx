@@ -161,7 +161,6 @@ function Home() {
         <div className="mb-4 flex flex-col gap-2 text-left">
           <div className="flex items-center justify-between gap-3">
             <h3 className="text-xl md:text-2xl font-bold text-white">{project.title}</h3>
-            <span className="text-xs uppercase tracking-[0.24em] text-gray-500">Featured</span>
           </div>
           <p className="text-sm md:text-base leading-7 text-gray-400">{project.description}</p>
         </div>
