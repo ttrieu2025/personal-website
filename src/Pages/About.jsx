@@ -21,7 +21,8 @@ const playlists = [
   "7JsX7h2KidnM87kAQ5QChq",
   "0o6iOAQ3V5h7Q3Lp4dZksn",
   "7vbnec2YeR2DQp82bZDsVx",
-  "5JgufXX9FsTaW5OX0UWDZS"
+  "5JgufXX9FsTaW5OX0UWDZS",
+  "7BEIC78C4QF1ljReffrBps"
 ];
 function About() {
   const [currentPlaylistIndex, setCurrentPlaylistIndex] = useState(0);

@@ -37,7 +37,7 @@ function Home() {
           {/* Left column: text + social icons */}
           <div className="flex flex-col gap-8 flex-1">
             <div className="intro-text flex flex-col gap-4 text-white display">
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-wrap justify-center gap-3">
                 <span className="inline-flex items-center rounded-full border border-white/15 bg-white/5 px-4 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-gray-300">
                   Electrical Engineering
                 </span>
