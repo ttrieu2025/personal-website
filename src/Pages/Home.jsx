@@ -45,7 +45,7 @@ function Home() {
                   UBC
                 </span>
               </div>
-              <h2 className="font-extrabold text-5xl tracking-tight leading-tight">
+              <h2 className="font-extrabold text-5xl tracking-tight  justify-center leading-tight">
                 Hi, I'm <span className="text-gray-400">Trieu</span>
               </h2>
               <p className="text-lg md:text-base leading-relaxed text-gray-400">
