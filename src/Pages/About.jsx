@@ -17,16 +17,20 @@ import 'swiper/css/effect-fade';
 import 'katex/dist/katex.min.css';
 
 const playlists = [
-  "28m92FXBUeN1B3NmKHZKjH",
-  "7JsX7h2KidnM87kAQ5QChq",
+  "5GvPZMfinr8UnS9RT2q8Ml",
+  "04LSGyi9iKBByghtzzSiRm",
   "0o6iOAQ3V5h7Q3Lp4dZksn",
   "7vbnec2YeR2DQp82bZDsVx",
   "5JgufXX9FsTaW5OX0UWDZS",
   "7BEIC78C4QF1ljReffrBps"
 ];
+
+// Change this value only when you update the Spotify playlist cover art.
+const spotifyCoverVersion = "2026-05-25-new-covers";
+
 function About() {
   const [currentPlaylistIndex, setCurrentPlaylistIndex] = useState(0);
-  const [spotifyEmbedVersion, setSpotifyEmbedVersion] = useState(Date.now());
+  const currentPlaylistId = playlists[currentPlaylistIndex];
 
   const profileImages = [
     "/me.jpg",
@@ -189,10 +193,10 @@ function About() {
             </div>
             <div className="relative">
               <iframe
-                key={`${playlists[currentPlaylistIndex]}-${spotifyEmbedVersion}`}
+                key={currentPlaylistId}
                 data-testid="embed-iframe"
                 style={{ borderRadius: "12px" }}
-                src={`https://open.spotify.com/embed/playlist/${playlists[currentPlaylistIndex]}?utm_source=generator&cache_bust=${spotifyEmbedVersion}`}
+                src={`https://open.spotify.com/embed/playlist/${currentPlaylistId}?utm_source=generator&cover_version=${spotifyCoverVersion}`}
                 width="100%"
                 height="352"
                 frameBorder="0"
@@ -206,9 +210,8 @@ function About() {
                 <button
                   onClick={() => {
                     setCurrentPlaylistIndex((prev) => (prev + 1) % playlists.length);
-                    setSpotifyEmbedVersion(Date.now());
                   }}
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white-400 hover:bg-grey-400 text-white font-bold transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-grey-500/50"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/10 hover:bg-white/15 text-white font-bold transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-white/10"
                 >
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
