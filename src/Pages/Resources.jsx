@@ -1,13 +1,18 @@
 import { useState } from "react";
 
 const Insightitems = [
-  {
+    {
     id: 1,
+    title: "Superposition in Circuit Analysis",
+    pdf: "./superposition.pdf",
+  },
+  {
+    id: 2,
     title: "Lagrange Multipliers in Optimization",
     pdf: "./Lagrange.pdf",
   },
   {
-    id: 2,
+    id: 3,
     title: "Maxwell's Equations in Physics",
     pdf: "./Maxwell.pdf",
   },
