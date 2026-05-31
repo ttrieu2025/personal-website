@@ -1,4 +1,10 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { Document, Page, pdfjs } from "react-pdf";
+
+pdfjs.GlobalWorkerOptions.workerSrc = new URL(
+  "pdfjs-dist/build/pdf.worker.min.mjs",
+  import.meta.url,
+).toString();
 
 const Insightitems = [
     {
@@ -27,6 +33,31 @@ const Formulasheetitems = [
 
 function Resources() {
   const [current, setCurrent] = useState(Insightitems[0]);
+  const [numPages, setNumPages] = useState(null);
+  const [mobilePdfWidth, setMobilePdfWidth] = useState(320);
+  const mobileViewerRef = useRef(null);
+
+  useEffect(() => {
+    const updatePdfWidth = () => {
+      if (!mobileViewerRef.current) return;
+
+      setMobilePdfWidth(Math.max(260, Math.min(mobileViewerRef.current.clientWidth - 24, 760)));
+    };
+
+    updatePdfWidth();
+
+    const resizeObserver = new ResizeObserver(updatePdfWidth);
+    if (mobileViewerRef.current) {
+      resizeObserver.observe(mobileViewerRef.current);
+    }
+
+    return () => resizeObserver.disconnect();
+  }, []);
+
+  const selectResource = (item) => {
+    setCurrent(item);
+    setNumPages(null);
+  };
 
   return (
     <div className="flex justify-center items-start min-h-screen mt-12 px-6 pb-12">
@@ -43,7 +74,7 @@ function Resources() {
               {Insightitems.map((item) => (
                 <button
                   key={item.id}
-                  onClick={() => setCurrent(item)}
+                  onClick={() => selectResource(item)}
                   className={`flex flex-col px-4 py-2 rounded-xl transition-all duration-300 text-sm font-medium ${
                     current.id === item.id 
                     ? "bg-white text-black" 
@@ -64,7 +95,7 @@ function Resources() {
               {Formulasheetitems.map((item) => (
                 <button
                   key={item.id}
-                  onClick={() => setCurrent(item)}
+                  onClick={() => selectResource(item)}
                   className={`text-left px-4 py-2 rounded-xl transition-all duration-300 text-sm font-medium ${
                     current.id === item.id 
                     ? "bg-white text-black" 
@@ -85,12 +116,70 @@ function Resources() {
             </h2>
           </div>
 
-          <div className="relative w-full rounded-2xl overflow-hidden border border-white/5 bg-black/40 h-[700px]">
+          <div className="relative hidden w-full rounded-2xl overflow-hidden border border-white/5 bg-black/40 h-[700px] md:block">
             <iframe
               src={current.pdf}
               title="PDF Viewer"
               className="w-full h-full border-0"
             />
+          </div>
+
+          <div
+            ref={mobileViewerRef}
+            className="w-full rounded-2xl border border-white/5 bg-black/40 p-3 md:hidden"
+          >
+            <div className="mb-3 flex items-center justify-between gap-3">
+              <span className="text-xs font-semibold uppercase tracking-[0.2em] text-gray-500">
+                {numPages ? `${numPages} pages` : "Loading"}
+              </span>
+              <a
+                href={current.pdf}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex min-h-10 min-w-28 items-center justify-center rounded-full bg-white px-1 py-2 text-center text-sm font-bold leading-none !text-black">
+                {" "} Download
+              </a>
+            </div>
+
+            <Document
+              key={current.pdf}
+              file={current.pdf}
+              loading={
+                <div className="flex min-h-48 items-center justify-center text-sm text-gray-500">
+                  Loading
+                </div>
+              }
+              error={
+                <div className="flex min-h-48 flex-col items-center justify-center gap-3 text-sm text-gray-500">
+                  <span>PDF preview unavailable.</span>
+                  <a
+                    href={current.pdf}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="rounded-full border border-white/15 px-4 py-2 font-semibold text-white transition hover:bg-white/10"
+                  >
+                    Open PDF
+                  </a>
+                </div>
+              }
+              onLoadSuccess={({ numPages }) => setNumPages(numPages)}
+            >
+              <div className="flex flex-col items-center gap-4">
+                {Array.from(new Array(numPages || 0), (_, index) => (
+                  <div
+                    key={`page_${index + 1}`}
+                    className="overflow-hidden rounded-xl bg-white shadow-lg"
+                  >
+                    <Page
+                      pageNumber={index + 1}
+                      width={mobilePdfWidth}
+                      renderAnnotationLayer={false}
+                      renderTextLayer={false}
+                    />
+                  </div>
+                ))}
+              </div>
+            </Document>
           </div>
 
           {/* DYNAMIC FOOTER: Reserved space to prevent container jumping */}
@@ -110,7 +199,7 @@ function Resources() {
               </p>
             ) : (
               <p className="text-gray-500 text-sm italic opacity-70">
-                  Note: If the PDF doesn't load, try refreshing or checking your browser's PDF settings.
+                  © 2026 Trieu Truong. All rights reserved.
               </p>
             )}
           </div>
