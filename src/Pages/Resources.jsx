@@ -41,7 +41,7 @@ function Resources() {
     const updatePdfWidth = () => {
       if (!mobileViewerRef.current) return;
 
-      setMobilePdfWidth(Math.max(260, Math.min(mobileViewerRef.current.clientWidth - 24, 760)));
+      setMobilePdfWidth(Math.max(280, Math.min(mobileViewerRef.current.clientWidth - 8, 760)));
     };
 
     updatePdfWidth();
@@ -60,9 +60,9 @@ function Resources() {
   };
 
   return (
-    <div className="flex justify-center items-start min-h-screen mt-12 px-6 pb-12">
+    <div className="flex justify-center items-start min-h-screen mt-12 px-2 pb-12 sm:px-6">
       {/* MAIN CONTAINER - Increased max-width to 7xl (or max-w-full for maximum width) */}
-      <div className="flex flex-col md:flex-row gap-8 bg-[#111111] border border-white/10 shadow-2xl rounded-[2.5rem] p-8 md:p-12 max-w-7xl w-full">
+      <div className="flex flex-col md:flex-row gap-8 bg-[#111111] border border-white/10 shadow-2xl rounded-[2.5rem] p-4 md:p-12 max-w-7xl w-full">
         
         {/* SIDEBAR: List of Items */}
         <div className="w-full md:w-1/4 flex flex-col gap-8">
@@ -126,7 +126,7 @@ function Resources() {
 
           <div
             ref={mobileViewerRef}
-            className="w-full rounded-2xl border border-white/5 bg-black/40 p-3 md:hidden"
+            className="w-full rounded-2xl border border-white/5 bg-black/40 p-1 md:hidden"
           >
             <div className="mb-3 flex items-center justify-between gap-3">
               <span className="text-xs font-semibold uppercase tracking-[0.2em] text-gray-500">
