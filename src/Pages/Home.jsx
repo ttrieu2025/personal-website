@@ -87,7 +87,7 @@ function Home() {
                   px: 4,
                   py: 1.4,
                   borderRadius: '999px',
-                  alignSelf: 'flex-start',
+                  alignSelf: { xs: 'center', sm: 'flex-start' },
                   boxShadow: '0 14px 35px rgba(255,255,255,0.12)',
                   transition: 'all 0.25s ease',
                   '&:hover': {
