@@ -199,7 +199,7 @@ function Resources() {
               </p>
             ) : (
               <p className="text-gray-500 text-sm italic opacity-70">
-                  © 2026 Trieu Truong. All rights reserved.
+                  Any feedback or comments on these papers are greatly appreciated. Feel free to contact me.
               </p>
             )}
           </div>
